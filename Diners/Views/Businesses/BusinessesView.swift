@@ -9,16 +9,12 @@ import SwiftUI
 
 struct BusinessesView: View {
     
-    let businesses: [Business]
-    private let columns = [
-        GridItem(.flexible()),
-        GridItem(.flexible())
-    ]
+    let viewModel: BusinessesViewModel
     
     var body: some View {
         ScrollView {
-            LazyVGrid(columns: columns, spacing: 10) {
-                ForEach(businesses) { business in
+            LazyVGrid(columns: viewModel.columns, spacing: 10) {
+                ForEach(viewModel.businesses) { business in
                     BusinessCardView(business: business)
                 }
             }
@@ -29,6 +25,7 @@ struct BusinessesView: View {
 
 struct BusinessesView_Previews: PreviewProvider {
     static var previews: some View {
-        BusinessesView(businesses: MockData.businesses)
+        BusinessesView(viewModel: BusinessesViewModel(
+            businesses: MockData.businesses))
     }
 }

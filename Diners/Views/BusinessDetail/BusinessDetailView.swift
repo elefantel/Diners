@@ -59,9 +59,9 @@ struct BusinessDetailView: View {
 
 struct BusinessDetailView_Previews: PreviewProvider {
     static var previews: some View {
-        let viewModel = BusinessDetailViewModel(businesses: MockData.businesses,
-                                                business: MockData.businesses[0])
-        BusinessDetailView(viewModel: viewModel)
+        BusinessDetailView(viewModel: BusinessDetailViewModel(
+            businesses: MockData.businesses,
+            business: MockData.businesses[0]))
     }
 }
 

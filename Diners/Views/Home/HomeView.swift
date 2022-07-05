@@ -40,18 +40,18 @@ struct HomeView: View {
                 restaurant = nil
             }
         } content: {
-            BusinessesView(businesses: businesses.byPricing(category))
+            BusinessesView(viewModel: BusinessesViewModel(
+                businesses: businesses.byPricing(category)))
                 .navigationTitle(category?.title ?? "Restaurants")
         } detail: {
             if let business = restaurant {
-                BusinessDetailView(viewModel: BusinessDetailViewModel(businesses: businesses,
-                                                                      business: business))
+                BusinessDetailView(viewModel: BusinessDetailViewModel(
+                    businesses: businesses,
+                    business: business))
             } else {
                 Text("Select business")
             }
         }
-//        BusinessDetailView(businesses: MockData.businesses,
-//                           business: MockData.businesses[0])
     }
     
     func showSection(for category: Price ) -> Bool {
