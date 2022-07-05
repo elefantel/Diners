@@ -9,6 +9,9 @@
 /* Begin PBXBuildFile section */
 		3D42999B2873A3AC00D6846B /* CardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D42999A2873A3AC00D6846B /* CardView.swift */; };
 		3D58274E287467AB00C5F80A /* ImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D58274D287467AB00C5F80A /* ImageView.swift */; };
+		3D582751287498AB00C5F80A /* DetailItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D582750287498AB00C5F80A /* DetailItemView.swift */; };
+		3D582753287498BE00C5F80A /* BusinessDetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D582752287498BE00C5F80A /* BusinessDetailViewModel.swift */; };
+		3D58275528749B3400C5F80A /* ReviewsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D58275428749B3400C5F80A /* ReviewsView.swift */; };
 		D133265A2861133C0009AA77 /* DinersApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = D13326592861133C0009AA77 /* DinersApp.swift */; };
 		D133265C2861133C0009AA77 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D133265B2861133C0009AA77 /* HomeView.swift */; };
 		D133265E2861133D0009AA77 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D133265D2861133D0009AA77 /* Assets.xcassets */; };
@@ -19,7 +22,7 @@
 		D1865875286511DE00148A75 /* Pricing.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1865874286511DE00148A75 /* Pricing.swift */; };
 		D1865877286513EB00148A75 /* Models.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1865876286513EB00148A75 /* Models.swift */; };
 		D186588528651BA200148A75 /* Image.swift in Sources */ = {isa = PBXBuildFile; fileRef = D186588428651BA200148A75 /* Image.swift */; };
-		D186588728651C1700148A75 /* BusinessItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D186588628651C1700148A75 /* BusinessItemView.swift */; };
+		D186588728651C1700148A75 /* BusinessCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D186588628651C1700148A75 /* BusinessCardView.swift */; };
 		D18658892866C36B00148A75 /* MockData.swift in Sources */ = {isa = PBXBuildFile; fileRef = D18658882866C36B00148A75 /* MockData.swift */; };
 		D186588B2866CEEF00148A75 /* BusinessesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D186588A2866CEEF00148A75 /* BusinessesView.swift */; };
 		D186588D28676BC300148A75 /* View.swift in Sources */ = {isa = PBXBuildFile; fileRef = D186588C28676BC300148A75 /* View.swift */; };
@@ -33,6 +36,9 @@
 /* Begin PBXFileReference section */
 		3D42999A2873A3AC00D6846B /* CardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardView.swift; sourceTree = "<group>"; };
 		3D58274D287467AB00C5F80A /* ImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageView.swift; sourceTree = "<group>"; };
+		3D582750287498AB00C5F80A /* DetailItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailItemView.swift; sourceTree = "<group>"; };
+		3D582752287498BE00C5F80A /* BusinessDetailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BusinessDetailViewModel.swift; sourceTree = "<group>"; };
+		3D58275428749B3400C5F80A /* ReviewsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReviewsView.swift; sourceTree = "<group>"; };
 		D13326562861133C0009AA77 /* Diners.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Diners.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D13326592861133C0009AA77 /* DinersApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DinersApp.swift; sourceTree = "<group>"; };
 		D133265B2861133C0009AA77 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
@@ -45,7 +51,7 @@
 		D1865874286511DE00148A75 /* Pricing.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Pricing.swift; sourceTree = "<group>"; };
 		D1865876286513EB00148A75 /* Models.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Models.swift; sourceTree = "<group>"; };
 		D186588428651BA200148A75 /* Image.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Image.swift; sourceTree = "<group>"; };
-		D186588628651C1700148A75 /* BusinessItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BusinessItemView.swift; sourceTree = "<group>"; };
+		D186588628651C1700148A75 /* BusinessCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BusinessCardView.swift; sourceTree = "<group>"; };
 		D18658882866C36B00148A75 /* MockData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockData.swift; sourceTree = "<group>"; };
 		D186588A2866CEEF00148A75 /* BusinessesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BusinessesView.swift; sourceTree = "<group>"; };
 		D186588C28676BC300148A75 /* View.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = View.swift; sourceTree = "<group>"; };
@@ -84,19 +90,19 @@
 			path = Home;
 			sourceTree = "<group>";
 		};
-		3D42999D2873A68A00D6846B /* Business */ = {
+		3D42999D2873A68A00D6846B /* Businesses */ = {
 			isa = PBXGroup;
 			children = (
 				D186588A2866CEEF00148A75 /* BusinessesView.swift */,
-				D186588628651C1700148A75 /* BusinessItemView.swift */,
 			);
-			path = Business;
+			path = Businesses;
 			sourceTree = "<group>";
 		};
 		3D58274B287450B300C5F80A /* BusinessDetail */ = {
 			isa = PBXGroup;
 			children = (
 				D13711AF286BFE8B00A0624C /* BusinessDetailView.swift */,
+				3D582752287498BE00C5F80A /* BusinessDetailViewModel.swift */,
 			);
 			path = BusinessDetail;
 			sourceTree = "<group>";
@@ -104,7 +110,10 @@
 		3D58274F28748CB300C5F80A /* Shared */ = {
 			isa = PBXGroup;
 			children = (
+				D186588628651C1700148A75 /* BusinessCardView.swift */,
 				3D58274D287467AB00C5F80A /* ImageView.swift */,
+				3D582750287498AB00C5F80A /* DetailItemView.swift */,
+				3D58275428749B3400C5F80A /* ReviewsView.swift */,
 			);
 			path = Shared;
 			sourceTree = "<group>";
@@ -153,7 +162,7 @@
 			isa = PBXGroup;
 			children = (
 				3D42999C2873A66B00D6846B /* Home */,
-				3D42999D2873A68A00D6846B /* Business */,
+				3D42999D2873A68A00D6846B /* Businesses */,
 				3D58274B287450B300C5F80A /* BusinessDetail */,
 				3D58274F28748CB300C5F80A /* Shared */,
 			);
@@ -262,10 +271,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3D58275528749B3400C5F80A /* ReviewsView.swift in Sources */,
 				D18658892866C36B00148A75 /* MockData.swift in Sources */,
 				3D58274E287467AB00C5F80A /* ImageView.swift in Sources */,
 				D186588B2866CEEF00148A75 /* BusinessesView.swift in Sources */,
 				D186589328679A1300148A75 /* Network.swift in Sources */,
+				3D582751287498AB00C5F80A /* DetailItemView.swift in Sources */,
 				D18CC6632868ADA600E01A2A /* Error.swift in Sources */,
 				D18CC6692868BE4500E01A2A /* BusinessService.swift in Sources */,
 				D186588528651BA200148A75 /* Image.swift in Sources */,
@@ -274,9 +285,10 @@
 				D133265A2861133C0009AA77 /* DinersApp.swift in Sources */,
 				D186588D28676BC300148A75 /* View.swift in Sources */,
 				3D42999B2873A3AC00D6846B /* CardView.swift in Sources */,
+				3D582753287498BE00C5F80A /* BusinessDetailViewModel.swift in Sources */,
 				D18CC6672868BBA100E01A2A /* HomeViewModel.swift in Sources */,
 				D13711B0286BFE8B00A0624C /* BusinessDetailView.swift in Sources */,
-				D186588728651C1700148A75 /* BusinessItemView.swift in Sources */,
+				D186588728651C1700148A75 /* BusinessCardView.swift in Sources */,
 				D1865877286513EB00148A75 /* Models.swift in Sources */,
 				D186589128678D2800148A75 /* Endpoint.swift in Sources */,
 				D18593CE2869704200645228 /* Data.swift in Sources */,

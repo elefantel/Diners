@@ -19,7 +19,7 @@ struct BusinessesView: View {
         ScrollView {
             LazyVGrid(columns: columns, spacing: 10) {
                 ForEach(businesses) { business in
-                    BusinessItemView(business: business)
+                    BusinessCardView(business: business)
                 }
             }
             .padding(.horizontal)

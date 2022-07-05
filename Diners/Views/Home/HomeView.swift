@@ -44,8 +44,8 @@ struct HomeView: View {
                 .navigationTitle(category?.title ?? "Restaurants")
         } detail: {
             if let business = restaurant {
-                BusinessDetailView(businesses: businesses,
-                                   business: business)
+                BusinessDetailView(viewModel: BusinessDetailViewModel(businesses: businesses,
+                                                                      business: business))
             } else {
                 Text("Select business")
             }
