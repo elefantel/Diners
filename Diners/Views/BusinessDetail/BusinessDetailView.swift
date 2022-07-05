@@ -18,7 +18,7 @@ struct BusinessDetailView: View {
                       width: .infinity,
                       height: 280)
             ScrollView {
-                ScrollViewReader { reader in
+                ScrollViewReader { verticalProxy in
                     VStack(alignment: .leading) {
                         HStack {
                             Text(viewModel.business.name)
@@ -36,31 +36,12 @@ struct BusinessDetailView: View {
                             annotationItems: [viewModel.mapPin]) {
                             MapMarker(coordinate: $0.coordinate)
                         }
-                            .frame(height: 100)
+                        .frame(height: 100)
                     }
                     .padding(.horizontal)
                     Spacer()
-                    if viewModel.otherBusinesses.count > 0 {
-                        VStack(alignment: .leading) {
-                            Text("Other restaurants")
-                                .font(.headline)
-                            ScrollView(.horizontal) {
-                                HStack(spacing: 8) {
-                                    ForEach(viewModel.otherBusinesses) { business in
-                                        BusinessCardView(business: business)
-                                            .onTapGesture {
-                                                withAnimation { viewModel.business = business }
-                                            }
-                                    }
-                                }
-                            }
-                            .scrollIndicators(.hidden)
-                        }
-                        .padding()
-                        .onChange(of: viewModel.business) { _ in
-                            reader.scrollTo(0)
-                        }
-                    }
+                    otherBusinessesView(viewModel.otherBusinesses,
+                                        verticalProxy: verticalProxy)
                 }
             }
         }
@@ -68,11 +49,54 @@ struct BusinessDetailView: View {
     }
 }
 
+extension BusinessDetailView {
+    
+    @ViewBuilder
+    private func otherBusinessesView(_ businesses: [Business],
+                                     verticalProxy: ScrollViewProxy) -> some View {
+        if viewModel.otherBusinesses.count > 0 {
+            VStack(alignment: .leading) {
+                Text("Other restaurants")
+                    .font(.headline)
+                ScrollView(.horizontal) {
+                    ScrollViewReader { horizontalProxy in
+                        HStack(spacing: 8) {
+                            ForEach(viewModel.otherBusinesses.indices,
+                                    id: \.self) { index in
+                                let business = viewModel.otherBusinesses[index]
+                                BusinessCardView(business: business)
+                                    .id(index)
+                                    .onTapGesture {
+                                        withAnimation { viewModel.business = business }
+                                    }
+                            }
+                        }
+                        .onChange(of: viewModel.business) { _ in
+                            verticalProxy.scrollTo(0)
+                            horizontalProxy.scrollTo(0)
+                        }
+                    }
+                }
+                .scrollIndicators(.hidden)
+            }
+            .padding()
+        }
+    }
+}
+
 struct BusinessDetailView_Previews: PreviewProvider {
     static var previews: some View {
         BusinessDetailView(viewModel: BusinessDetailViewModel(
-            businesses: MockData.businesses,
-            business: MockData.businesses[0]))
+                    businesses: MockData.businesses,
+                    business: MockData.businesses[0]))
+                .previewDevice(PreviewDevice(rawValue: "iPad Pro (12.9-inch) (5th generation)"))
+                            .previewDisplayName("iPad Pro (12.9-inch) (5th generation)")
+                
+                BusinessDetailView(viewModel: BusinessDetailViewModel(
+                    businesses: MockData.businesses,
+                    business: MockData.businesses[0]))
+                .previewDevice(PreviewDevice(rawValue: "iPhone 13 Pro Max"))
+                            .previewDisplayName("iPhone 13 Pro Max")
     }
 }
 

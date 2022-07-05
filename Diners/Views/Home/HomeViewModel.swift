@@ -20,6 +20,16 @@ final class HomeViewModel: ObservableObject {
         self.businessService = businessService
     }
     
+    func fetchBusinesses() {
+        Task.init {
+            do {
+                try await businesses()
+            } catch {
+                print(error)
+            }
+        }
+    }
+    
     func business(id: String) async throws -> Business {
         try await businessService.business(id: id)
     }

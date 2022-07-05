@@ -21,20 +21,13 @@ struct HomeView: View {
             .padding(.horizontal, -16)
             .scrollIndicators(.hidden)
             .navigationTitle("Categories")
-            .onAppear {
-                Task.init {
-                    do {
-                        try await viewModel.businesses()
-                    } catch {
-                        print(error)
-                    }
-                }
-            }
+            .onAppear { viewModel.fetchBusinesses() }
             .navigationDestination(for: Price.self) { category in
                 BusinessesView(viewModel: BusinessesViewModel(
                     businesses: viewModel.businesses.byPricing(category)))
                     .navigationTitle(category.title)
                     .onAppear { viewModel.selectedCategory = category }
+                    .buttonStyle(PlainButtonStyle())
             }
             .navigationDestination(for: Business.self) { business in
                 BusinessDetailView(viewModel: BusinessDetailViewModel(
@@ -42,7 +35,8 @@ struct HomeView: View {
                     business: business))
             }
         }
-    }    
+        .accentColor(Color.tealDark)
+    }
 }
 
 struct HomeView_Previews: PreviewProvider {

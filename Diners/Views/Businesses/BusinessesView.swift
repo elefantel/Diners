@@ -22,6 +22,7 @@ struct BusinessesView: View {
             }
             .padding(.horizontal)
         }
+        .background(Color.tealLight)
     }
 }
 

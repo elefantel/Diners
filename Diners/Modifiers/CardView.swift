@@ -13,6 +13,7 @@ struct CardView: ViewModifier {
     
     func body(content: Content) -> some View {
         content
+            .background(.white)
             .clipShape(RoundedRectangle(cornerRadius: 16, style: .continuous))
             .overlay(
                 RoundedRectangle(cornerRadius: 16, style: .continuous)
