@@ -40,7 +40,7 @@ struct BusinessDetailView: View {
                     }
                     .padding(.horizontal)
                     Spacer()
-                    if viewModel.otherBusinesses.count > 0 {
+                    if !viewModel.otherBusinesses.isEmpty {
                         VStack(alignment: .leading) {
                             Text("Other restaurants")
                                 .font(.headline)
@@ -63,6 +63,7 @@ struct BusinessDetailView: View {
                     }
                 }
             }
+            .scrollIndicators(.hidden)
         }
         .edgesIgnoringSafeArea(.top)
     }
@@ -73,6 +74,14 @@ struct BusinessDetailView_Previews: PreviewProvider {
         BusinessDetailView(viewModel: BusinessDetailViewModel(
             businesses: MockData.businesses,
             business: MockData.businesses[0]))
+        .previewDevice(PreviewDevice(rawValue: "iPad Pro (12.9-inch) (5th generation)"))
+                    .previewDisplayName("iPad Pro (12.9-inch) (5th generation)")
+        
+        BusinessDetailView(viewModel: BusinessDetailViewModel(
+            businesses: MockData.businesses,
+            business: MockData.businesses[0]))
+        .previewDevice(PreviewDevice(rawValue: "iPhone 13 Pro Max"))
+                    .previewDisplayName("iPhone 13 Pro Max")
     }
 }
 

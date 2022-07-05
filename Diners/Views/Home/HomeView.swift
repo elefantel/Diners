@@ -49,5 +49,12 @@ struct HomeView_Previews: PreviewProvider {
     static var previews: some View {
         HomeView(
             viewModel: HomeViewModel())
+        .previewDevice(PreviewDevice(rawValue: "iPad Pro (12.9-inch) (5th generation)"))
+                    .previewDisplayName("iPad Pro (12.9-inch) (5th generation)")
+        
+        HomeView(
+            viewModel: HomeViewModel())
+        .previewDevice(PreviewDevice(rawValue: "iPhone 13 Pro Max"))
+                    .previewDisplayName("iPhone 13 Pro Max")
     }
 }

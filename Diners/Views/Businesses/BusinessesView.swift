@@ -22,6 +22,7 @@ struct BusinessesView: View {
             }
             .padding(.horizontal)
         }
+        .scrollIndicators(.hidden)
     }
 }
 
