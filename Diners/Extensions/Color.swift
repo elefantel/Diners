@@ -8,5 +8,6 @@
 import SwiftUI
 
 extension Color {
-    static let tealLight = Color(red: 184, green: 216, blue: 214)
+    static let tealLight = Color(red: 0.73, green: 0.84, blue: 0.84)
+    static let tealDark = Color(red: 0.07, green: 0.47, blue: 0.46)
 }

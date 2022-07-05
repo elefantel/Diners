@@ -23,14 +23,14 @@ struct HomeView: View {
                     if showSection(for: priceCategory) {
                         Section(priceCategory.title) {
                             BusinessesView(businesses: businesses.byPricing(priceCategory))
-                            }
+                        }
                         .listRowInsets(EdgeInsets(top: 0, leading: 0, bottom: 0, trailing: 0))
                         .font(.headline)
                         .fontWeight(.bold)
                     }
                 }
             }
-            .padding(.horizontal, -16)
+            .padding(.horizontal, -8)
             .scrollIndicators(.hidden)
             .navigationTitle("Restaurants")
         }

@@ -1,0 +1,6 @@
+
+*.xcuserstate
+
+.DS_Store
+
+Diners.xcodeproj/xcuserdata/athomas.xcuserdatad/xcschemes/xcschememanagement.plist

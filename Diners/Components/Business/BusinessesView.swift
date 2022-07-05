@@ -17,8 +17,8 @@ struct BusinessesView: View {
                     BusinessView(business: business)
                 }
             }
+            .padding(2)
         }
-        //.padding(4)
         .listRowBackground(Color.clear)
         .scrollIndicators(.hidden)
     }
