@@ -8,7 +8,12 @@
 import Foundation
 
 @MainActor
-class HomeViewModel {
+final class HomeViewModel: ObservableObject {
+    
+    @Published var businesses: [Business] = []
+    @Published var selectedCategory: Price?
+    let priceCategories: [Price] = Price.allCases
+    
     private let businessService: BusinessServiceType
     
     init(businessService: BusinessServiceType = BusinessService()) {
@@ -19,7 +24,11 @@ class HomeViewModel {
         try await businessService.business(id: id)
     }
     
-    func businesses(from query: String = "meat") async throws -> [Business] {
-        try await businessService.businesses(from: query)
+    func businesses(from query: String = "meat") async throws {
+        businesses = try await businessService.businesses(from: query)
+    }
+    
+    func showSection(for category: Price ) -> Bool {
+        !businesses.byPricing(category).isEmpty
     }
 }

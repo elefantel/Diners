@@ -8,19 +8,13 @@
 import SwiftUI
 
 struct HomeView: View {
-    let viewModel: HomeViewModel
-
-    @State private var query = ""
-    @State private var searchCategory = ""
-    @State var businesses: [Business] = []
-    @State private var category: Price?
-    @State private var restaurant: Business?
-    let priceCategories: [Price] = Price.allCases
+    
+    @ObservedObject var viewModel: HomeViewModel
     
     var body: some View {
-        NavigationSplitView() {
-            List(priceCategories, selection: $category) { priceCategory in
-                if showSection(for: priceCategory) {
+        NavigationStack {
+            List(viewModel.priceCategories) { priceCategory in
+                if viewModel.showSection(for: priceCategory) {
                     NavigationLink(priceCategory.title, value: priceCategory)
                 }
             }
@@ -30,33 +24,25 @@ struct HomeView: View {
             .onAppear {
                 Task.init {
                     do {
-                        businesses = try await viewModel.businesses()
+                        try await viewModel.businesses()
                     } catch {
                         print(error)
                     }
                 }
             }
-            .onChange(of: category) { newValue in
-                restaurant = nil
+            .navigationDestination(for: Price.self) { category in
+                BusinessesView(viewModel: BusinessesViewModel(
+                    businesses: viewModel.businesses.byPricing(category)))
+                    .navigationTitle(category.title)
+                    .onAppear { viewModel.selectedCategory = category }
             }
-        } content: {
-            BusinessesView(viewModel: BusinessesViewModel(
-                businesses: businesses.byPricing(category)))
-                .navigationTitle(category?.title ?? "Restaurants")
-        } detail: {
-            if let business = restaurant {
+            .navigationDestination(for: Business.self) { business in
                 BusinessDetailView(viewModel: BusinessDetailViewModel(
-                    businesses: businesses,
+                    businesses: viewModel.businesses.byPricing(viewModel.selectedCategory),
                     business: business))
-            } else {
-                Text("Select business")
             }
         }
-    }
-    
-    func showSection(for category: Price ) -> Bool {
-        !businesses.byPricing(category).isEmpty
-    }
+    }    
 }
 
 struct HomeView_Previews: PreviewProvider {

@@ -15,7 +15,9 @@ struct BusinessesView: View {
         ScrollView {
             LazyVGrid(columns: viewModel.columns, spacing: 10) {
                 ForEach(viewModel.businesses) { business in
-                    BusinessCardView(business: business)
+                    NavigationLink(value: business) {
+                        BusinessCardView(business: business)
+                    }
                 }
             }
             .padding(.horizontal)

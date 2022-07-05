@@ -7,10 +7,15 @@
 
 import MapKit
 
-final class BusinessDetailViewModel {
+final class BusinessDetailViewModel: ObservableObject {
     
     let businesses: [Business]
-    let business: Business
+    
+    @Published var business: Business
+    
+    var otherBusinesses: [Business] {
+        businesses.filter { $0.id != business.id }
+    }
     
     lazy var detailItems: [DetailItem] = [
         DetailItem(
@@ -26,12 +31,15 @@ final class BusinessDetailViewModel {
             title: "Address:",
             description: business.location.displayAddress.joined(separator: ", "))
     ]
+    
     var mapPin: BusinessAnnotation {
         .init(name: business.name, coordinate: coordinate)
     }
+    
     var coordinate: CLLocationCoordinate2D {
         .init(latitude: business.coordinates.latitude, longitude: business.coordinates.longitude)
     }
+    
     var coordinateRegion: MKCoordinateRegion {
         .init(center: coordinate, span: MKCoordinateSpan(latitudeDelta: 0.5, longitudeDelta: 0.5))
     }
