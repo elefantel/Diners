@@ -17,7 +17,7 @@ struct CardView: ViewModifier {
             .overlay(
                 RoundedRectangle(cornerRadius: 16, style: .continuous)
                     .stroke(.white, lineWidth: 2)
-                    .shadow(color: .black.opacity(0.5), radius: 2))
+                    .shadow(color: .black.opacity(0.6), radius: 2))
             .frame(width: size.width, height: size.height)
     }
 }

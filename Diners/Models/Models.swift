@@ -5,6 +5,9 @@
 //  Created by Mpendulo Ndlovu on 2022/06/23.
 //
 
+import MapKit
+import Foundation
+
 // MARK: - Businesses
 struct Businesses: Codable {
     let total: Int
@@ -68,4 +71,11 @@ struct Location: Codable, Hashable {
 // MARK: - Region
 struct Region: Codable, Hashable {
     let center: Center
+}
+
+// MARK: - BusinessAnnotation
+struct BusinessAnnotation: Identifiable {
+    let id = UUID()
+    let name: String
+    let coordinate: CLLocationCoordinate2D
 }

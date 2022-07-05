@@ -12,30 +12,19 @@ struct BusinessItemView: View {
     
     var body: some View {
         VStack(spacing: 0) {
-            AsyncImage(
-                url: URL(string: business.imageUrl),
-                content: { image in
-                    image
-                        .resizable()
-                        .aspectRatio(contentMode: .fill)
-                        .frame(width: 170, height: 200)
-                        .clipped()
-                },
-                placeholder: {
-                    ProgressView()
-                }
-            )
+            ImageView(urlString: business.imageUrl)
             VStack(alignment: .leading) {
                 Text(business.name)
                     .font(.subheadline)
                     .fontWeight(.semibold)
-                HStack {
-                    Image(systemName: "star")
+                // Refactor
+                HStack(spacing: 4) {
+                    Image(systemName: "star.fill")
                         .resizable()
                         .frame(width: 10, height: 10)
                         .foregroundColor(.yellow)
                     Text(String(format: "%.1f", business.rating))
-                    Text("\(business.reviewCount) Reviews")
+                    Text("(\(business.reviewCount) reviews)")
                 }
                 .font(.caption)
                 .fontWeight(.regular)

@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		3D42999B2873A3AC00D6846B /* CardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D42999A2873A3AC00D6846B /* CardView.swift */; };
+		3D58274E287467AB00C5F80A /* ImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D58274D287467AB00C5F80A /* ImageView.swift */; };
 		D133265A2861133C0009AA77 /* DinersApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = D13326592861133C0009AA77 /* DinersApp.swift */; };
 		D133265C2861133C0009AA77 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D133265B2861133C0009AA77 /* HomeView.swift */; };
 		D133265E2861133D0009AA77 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D133265D2861133D0009AA77 /* Assets.xcassets */; };
@@ -31,6 +32,7 @@
 
 /* Begin PBXFileReference section */
 		3D42999A2873A3AC00D6846B /* CardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardView.swift; sourceTree = "<group>"; };
+		3D58274D287467AB00C5F80A /* ImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageView.swift; sourceTree = "<group>"; };
 		D13326562861133C0009AA77 /* Diners.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Diners.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D13326592861133C0009AA77 /* DinersApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DinersApp.swift; sourceTree = "<group>"; };
 		D133265B2861133C0009AA77 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
@@ -99,6 +101,14 @@
 			path = BusinessDetail;
 			sourceTree = "<group>";
 		};
+		3D58274F28748CB300C5F80A /* Shared */ = {
+			isa = PBXGroup;
+			children = (
+				3D58274D287467AB00C5F80A /* ImageView.swift */,
+			);
+			path = Shared;
+			sourceTree = "<group>";
+		};
 		D133264D2861133C0009AA77 = {
 			isa = PBXGroup;
 			children = (
@@ -122,7 +132,7 @@
 				D186588E28678CBD00148A75 /* Models */,
 				D186588128651AB300148A75 /* Extensions */,
 				3D4299992873A39400D6846B /* Modifiers */,
-				D18658782865199A00148A75 /* Components */,
+				D18658782865199A00148A75 /* Views */,
 				D13326592861133C0009AA77 /* DinersApp.swift */,
 				D133265D2861133D0009AA77 /* Assets.xcassets */,
 				D133265F2861133D0009AA77 /* Diners.entitlements */,
@@ -139,14 +149,15 @@
 			path = "Preview Content";
 			sourceTree = "<group>";
 		};
-		D18658782865199A00148A75 /* Components */ = {
+		D18658782865199A00148A75 /* Views */ = {
 			isa = PBXGroup;
 			children = (
 				3D42999C2873A66B00D6846B /* Home */,
 				3D42999D2873A68A00D6846B /* Business */,
 				3D58274B287450B300C5F80A /* BusinessDetail */,
+				3D58274F28748CB300C5F80A /* Shared */,
 			);
-			path = Components;
+			path = Views;
 			sourceTree = "<group>";
 		};
 		D186588128651AB300148A75 /* Extensions */ = {
@@ -252,6 +263,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				D18658892866C36B00148A75 /* MockData.swift in Sources */,
+				3D58274E287467AB00C5F80A /* ImageView.swift in Sources */,
 				D186588B2866CEEF00148A75 /* BusinessesView.swift in Sources */,
 				D186589328679A1300148A75 /* Network.swift in Sources */,
 				D18CC6632868ADA600E01A2A /* Error.swift in Sources */,
