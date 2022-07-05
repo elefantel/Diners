@@ -50,6 +50,8 @@ struct HomeView: View {
                 Text("Select business")
             }
         }
+//        BusinessDetailView(businesses: MockData.businesses,
+//                           business: MockData.businesses[0])
     }
     
     func showSection(for category: Price ) -> Bool {

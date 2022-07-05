@@ -25,7 +25,6 @@ struct DetailItemView: View {
                 .frame(width: 20, height: 20)
                 .foregroundColor(Color.tealDark)
             Text(item.title)
-                .fontWeight(.semibold)
             Text(item.description)
         }
     }

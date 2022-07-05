@@ -21,7 +21,7 @@ struct BusinessDetailView: View {
                 VStack(alignment: .leading) {
                     HStack {
                         Text(viewModel.business.name)
-                            .font(.title)
+                            .font(.title2)
                             .fontWeight(.semibold)
                         Spacer(minLength: 0)
                         ReviewsView(business: viewModel.business,
@@ -40,7 +40,7 @@ struct BusinessDetailView: View {
                 Spacer()
                 VStack(alignment: .leading) {
                     Text("Other restaurants")
-                        .fontWeight(.semibold)
+                        .font(.headline)
                     ScrollView(.horizontal) {
                         HStack(spacing: 8) {
                             ForEach(viewModel.businesses) { business in
