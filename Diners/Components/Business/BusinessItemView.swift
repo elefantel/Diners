@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct BusinessView: View {
+struct BusinessItemView: View {
     let business: Business
     
     var body: some View {
@@ -18,7 +18,7 @@ struct BusinessView: View {
                     image
                         .resizable()
                         .aspectRatio(contentMode: .fill)
-                        .frame(width: 200, height: 200)
+                        .frame(width: 170, height: 200)
                         .clipped()
                 },
                 placeholder: {
@@ -35,10 +35,6 @@ struct BusinessView: View {
                         .frame(width: 10, height: 10)
                         .foregroundColor(.yellow)
                     Text(String(format: "%.1f", business.rating))
-                    Image(systemName: "quote.bubble")
-                        .resizable()
-                        .frame(width: 10, height: 10)
-                        .foregroundColor(Color.tealDark)
                     Text("\(business.reviewCount) Reviews")
                 }
                 .font(.caption)
@@ -55,6 +51,6 @@ struct BusinessView: View {
 
 struct BusinessView_Previews: PreviewProvider {
     static var previews: some View {
-        BusinessView(business: MockData.businesses[0])
+        BusinessItemView(business: MockData.businesses[0])
     }
 }

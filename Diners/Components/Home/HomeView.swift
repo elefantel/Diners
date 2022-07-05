@@ -13,40 +13,40 @@ struct HomeView: View {
     @State private var query = ""
     @State private var searchCategory = ""
     @State var businesses: [Business] = []
-    let priceCategories: [Price] = Price.allCases.reversed()
+    @State private var category: Price?
+    @State private var restaurant: Business?
+    let priceCategories: [Price] = Price.allCases
     
     var body: some View {
-        
-        NavigationStack {
-            List {
-                ForEach(priceCategories) { priceCategory in
-                    if showSection(for: priceCategory) {
-                        Section(priceCategory.title) {
-                            BusinessesView(businesses: businesses.byPricing(priceCategory))
-                        }
-                        .listRowInsets(EdgeInsets(top: 0, leading: 0, bottom: 0, trailing: 0))
-                        .font(.headline)
-                        .fontWeight(.bold)
+        NavigationSplitView() {
+            List(priceCategories, selection: $category) { priceCategory in
+                if showSection(for: priceCategory) {
+                    NavigationLink(priceCategory.title, value: priceCategory)
+                }
+            }
+            .padding(.horizontal, -16)
+            .scrollIndicators(.hidden)
+            .navigationTitle("Categories")
+            .onAppear {
+                Task.init {
+                    do {
+                        businesses = try await viewModel.businesses()
+                    } catch {
+                        print(error)
                     }
                 }
             }
-            .padding(.horizontal, -8)
-            .scrollIndicators(.hidden)
-            .navigationTitle("Restaurants")
-        }
-        .searchable(text: $query)
-        .onChange(of: query) { newValue in
-            Task.init {
-                businesses = try await viewModel.businesses(from: query)
+            .onChange(of: category) { newValue in
+                restaurant = nil
             }
-        }
-        .onAppear {
-            Task.init {
-                do {
-                    businesses = try await viewModel.businesses()
-                } catch {
-                    print(error)
-                }
+        } content: {
+            BusinessesView(businesses: businesses.byPricing(category))
+                .navigationTitle(category?.title ?? "Restaurants")
+        } detail: {
+            if let business = restaurant {
+                BusinessDetailView(business: business)
+            } else {
+                Text("Select business")
             }
         }
     }

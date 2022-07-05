@@ -8,19 +8,22 @@
 import SwiftUI
 
 struct BusinessesView: View {
+    
     let businesses: [Business]
+    private let columns = [
+        GridItem(.flexible()),
+        GridItem(.flexible())
+    ]
     
     var body: some View {
-        ScrollView(.horizontal) {
-            HStack(spacing: 8) {
+        ScrollView {
+            LazyVGrid(columns: columns, spacing: 10) {
                 ForEach(businesses) { business in
-                    BusinessView(business: business)
+                    BusinessItemView(business: business)
                 }
             }
-            .padding(2)
+            .padding(.horizontal)
         }
-        .listRowBackground(Color.clear)
-        .scrollIndicators(.hidden)
     }
 }
 

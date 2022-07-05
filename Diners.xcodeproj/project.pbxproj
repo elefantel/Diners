@@ -18,7 +18,7 @@
 		D1865875286511DE00148A75 /* Pricing.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1865874286511DE00148A75 /* Pricing.swift */; };
 		D1865877286513EB00148A75 /* Models.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1865876286513EB00148A75 /* Models.swift */; };
 		D186588528651BA200148A75 /* Image.swift in Sources */ = {isa = PBXBuildFile; fileRef = D186588428651BA200148A75 /* Image.swift */; };
-		D186588728651C1700148A75 /* BusinessView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D186588628651C1700148A75 /* BusinessView.swift */; };
+		D186588728651C1700148A75 /* BusinessItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D186588628651C1700148A75 /* BusinessItemView.swift */; };
 		D18658892866C36B00148A75 /* MockData.swift in Sources */ = {isa = PBXBuildFile; fileRef = D18658882866C36B00148A75 /* MockData.swift */; };
 		D186588B2866CEEF00148A75 /* BusinessesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D186588A2866CEEF00148A75 /* BusinessesView.swift */; };
 		D186588D28676BC300148A75 /* View.swift in Sources */ = {isa = PBXBuildFile; fileRef = D186588C28676BC300148A75 /* View.swift */; };
@@ -43,7 +43,7 @@
 		D1865874286511DE00148A75 /* Pricing.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Pricing.swift; sourceTree = "<group>"; };
 		D1865876286513EB00148A75 /* Models.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Models.swift; sourceTree = "<group>"; };
 		D186588428651BA200148A75 /* Image.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Image.swift; sourceTree = "<group>"; };
-		D186588628651C1700148A75 /* BusinessView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BusinessView.swift; sourceTree = "<group>"; };
+		D186588628651C1700148A75 /* BusinessItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BusinessItemView.swift; sourceTree = "<group>"; };
 		D18658882866C36B00148A75 /* MockData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockData.swift; sourceTree = "<group>"; };
 		D186588A2866CEEF00148A75 /* BusinessesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BusinessesView.swift; sourceTree = "<group>"; };
 		D186588C28676BC300148A75 /* View.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = View.swift; sourceTree = "<group>"; };
@@ -85,11 +85,18 @@
 		3D42999D2873A68A00D6846B /* Business */ = {
 			isa = PBXGroup;
 			children = (
-				D186588628651C1700148A75 /* BusinessView.swift */,
 				D186588A2866CEEF00148A75 /* BusinessesView.swift */,
-				D13711AF286BFE8B00A0624C /* BusinessDetailView.swift */,
+				D186588628651C1700148A75 /* BusinessItemView.swift */,
 			);
 			path = Business;
+			sourceTree = "<group>";
+		};
+		3D58274B287450B300C5F80A /* BusinessDetail */ = {
+			isa = PBXGroup;
+			children = (
+				D13711AF286BFE8B00A0624C /* BusinessDetailView.swift */,
+			);
+			path = BusinessDetail;
 			sourceTree = "<group>";
 		};
 		D133264D2861133C0009AA77 = {
@@ -137,6 +144,7 @@
 			children = (
 				3D42999C2873A66B00D6846B /* Home */,
 				3D42999D2873A68A00D6846B /* Business */,
+				3D58274B287450B300C5F80A /* BusinessDetail */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -256,7 +264,7 @@
 				3D42999B2873A3AC00D6846B /* CardView.swift in Sources */,
 				D18CC6672868BBA100E01A2A /* HomeViewModel.swift in Sources */,
 				D13711B0286BFE8B00A0624C /* BusinessDetailView.swift in Sources */,
-				D186588728651C1700148A75 /* BusinessView.swift in Sources */,
+				D186588728651C1700148A75 /* BusinessItemView.swift in Sources */,
 				D1865877286513EB00148A75 /* Models.swift in Sources */,
 				D186589128678D2800148A75 /* Endpoint.swift in Sources */,
 				D18593CE2869704200645228 /* Data.swift in Sources */,

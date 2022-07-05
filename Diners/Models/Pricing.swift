@@ -27,8 +27,8 @@ enum Price: String, CaseIterable, Identifiable {
 }
 
 extension Array where Element == Business {
-    func byPricing(_ price: Price) -> [Element] {
-        filter { $0.price == price.rawValue }
+    func byPricing(_ price: Price?) -> [Element] {
+        filter { $0.price == price?.rawValue }
     }
 }
 

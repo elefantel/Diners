@@ -13,7 +13,7 @@ struct Businesses: Codable {
 }
 
 // MARK: - Business
-struct Business: Codable, Identifiable {
+struct Business: Codable, Identifiable, Hashable {
     let rating: Double
     let phone, id, alias: String
     let price: String?
@@ -42,17 +42,17 @@ struct Business: Codable, Identifiable {
 }
 
 // MARK: - Category
-struct Category: Codable {
+struct Category: Codable, Hashable {
     let alias, title: String
 }
 
 // MARK: - Center
-struct Center: Codable {
+struct Center: Codable, Hashable {
     let latitude, longitude: Double
 }
 
 // MARK: - Location
-struct Location: Codable {
+struct Location: Codable, Hashable {
     let city, country: String
     let address2, address3: String?
     let displayAddress: [String]
@@ -66,6 +66,6 @@ struct Location: Codable {
 }
 
 // MARK: - Region
-struct Region: Codable {
+struct Region: Codable, Hashable {
     let center: Center
 }
