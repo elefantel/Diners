@@ -14,7 +14,7 @@ final class HomeViewModel: ObservableObject {
     @Published var selectedCategory: Price = .all
     @Published var searchQuery = ""
     let priceCategories: [Price] = Price.allCases
-    let columns = Array(repeating: GridItem(.adaptive(minimum: 170)), count: 2)
+    let columns = Array(repeating: GridItem(.adaptive(minimum: 180)), count: 2)
     
     private let businessService: BusinessServiceType
     

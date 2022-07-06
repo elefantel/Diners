@@ -15,8 +15,7 @@ struct BusinessDetailView: View {
     var body: some View {
         VStack(spacing: 0) {
             ImageView(urlString: viewModel.business.imageUrl,
-                      width: .infinity,
-                      height: 280)
+                      height: 300)
             ScrollView {
                 ScrollViewReader { verticalProxy in
                     businessInfoView
@@ -44,7 +43,7 @@ private extension BusinessDetailView {
                     .fontWeight(.semibold)
                 Spacer(minLength: 0)
                 ReviewsView(business: viewModel.business,
-                            imageSize: .init(width: 15, height: 15))
+                            imageSize: .init(width: 20, height: 20))
             }
             .id(0)
             ForEach(viewModel.detailItems) { detailItem in
@@ -63,7 +62,7 @@ private extension BusinessDetailView {
     
     @ViewBuilder
     func otherBusinessesView(_ businesses: [Business],
-                                     verticalProxy: ScrollViewProxy) -> some View {
+                             verticalProxy: ScrollViewProxy) -> some View {
         if viewModel.otherBusinesses.count > 0 {
             VStack(alignment: .leading) {
                 Text("Other restaurants")
@@ -76,6 +75,7 @@ private extension BusinessDetailView {
                                 let business = viewModel.otherBusinesses[index]
                                 BusinessCardView(business: business)
                                     .id(index)
+                                    .frame(width: 240)
                                     .onTapGesture {
                                         withAnimation { viewModel.business = business }
                                     }

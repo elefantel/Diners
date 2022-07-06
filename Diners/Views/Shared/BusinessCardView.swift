@@ -8,21 +8,26 @@
 import SwiftUI
 
 struct BusinessCardView: View {
+    
     let business: Business
     
     var body: some View {
         VStack(spacing: 0) {
-            ImageView(urlString: business.imageUrl)
-            VStack(alignment: .leading) {
+            Color.clear
+                .background(ImageView(urlString: business.imageUrl))
+            VStack(alignment: .leading, spacing: 4) {
                 Text(business.name)
+                    .lineLimit(2)
                     .font(.subheadline)
                     .fontWeight(.semibold)
+                    .fixedSize(horizontal: false, vertical: true)
                 ReviewsView(business: business)
                     .font(.caption)
                     .fontWeight(.regular)
             }
             .frame(maxWidth: .infinity,
-                   maxHeight: .infinity,
+                   minHeight: 50,
+                   maxHeight: 50,
                    alignment: .topLeading)
             .padding()
         }

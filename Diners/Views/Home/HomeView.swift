@@ -42,7 +42,7 @@ struct HomeView: View {
     }
 }
 
-extension HomeView {
+private extension HomeView {
     
     var categoryPicker: some View {
         ScrollView(.horizontal) {
