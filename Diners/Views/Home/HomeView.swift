@@ -12,8 +12,9 @@ struct HomeView: View {
     @ObservedObject var viewModel: HomeViewModel
     
     var body: some View {
-        NavigationStack {
-            List(viewModel.priceCategories) { priceCategory in
+        NavigationSplitView() {
+            List(viewModel.priceCategories,
+                 selection: $viewModel.selectedCategory) { priceCategory in
                 if viewModel.showSection(for: priceCategory) {
                     NavigationLink(priceCategory.title, value: priceCategory)
                 }
@@ -30,16 +31,30 @@ struct HomeView: View {
                     }
                 }
             }
-            .navigationDestination(for: Price.self) { category in
-                BusinessesView(viewModel: BusinessesViewModel(
-                    businesses: viewModel.businesses.byPricing(category)))
+        } content: {
+            ZStack {
+                if let category = viewModel.selectedCategory {
+                    List(viewModel.businesses.byPricing(category),
+                         selection: $viewModel.selectedBusiness) { business in
+                        NavigationLink(value: business) {
+                            BusinessRowView(business: business)
+                        }
+                    }
+                    .scrollIndicators(.hidden)
                     .navigationTitle(category.title)
-                    .onAppear { viewModel.selectedCategory = category }
+                } else {
+                    Text("Select price category")
+                }
             }
-            .navigationDestination(for: Business.self) { business in
-                BusinessDetailView(viewModel: BusinessDetailViewModel(
-                    businesses: viewModel.businesses.byPricing(viewModel.selectedCategory),
-                    business: business))
+        } detail: {
+            NavigationStack {
+                if let business = viewModel.selectedBusiness {
+                    BusinessDetailView(viewModel: BusinessDetailViewModel(
+                        businesses: viewModel.businesses.byPricing(viewModel.selectedCategory),
+                        business: business))
+                } else {
+                    Text("Select business")
+                }
             }
         }
     }    

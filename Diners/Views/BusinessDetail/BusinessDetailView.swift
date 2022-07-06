@@ -16,7 +16,7 @@ struct BusinessDetailView: View {
         VStack {
             ImageView(urlString: viewModel.business.imageUrl,
                       width: .infinity,
-                      height: 280)
+                      height: 300)
             ScrollView {
                 ScrollViewReader { reader in
                     VStack(alignment: .leading) {
@@ -25,8 +25,9 @@ struct BusinessDetailView: View {
                                 .font(.title2)
                                 .fontWeight(.semibold)
                             Spacer(minLength: 0)
-                            ReviewsView(business: viewModel.business,
-                                        imageSize: .init(width: 20, height: 20))
+                            ReviewsView(rating: viewModel.business.rating,
+                                        reviewCount: viewModel.business.reviewCount,
+                                        imageSize: 20)
                         }
                         .id(0)
                         ForEach(viewModel.detailItems) { detailItem in
@@ -36,7 +37,7 @@ struct BusinessDetailView: View {
                             annotationItems: [viewModel.mapPin]) {
                             MapMarker(coordinate: $0.coordinate)
                         }
-                            .frame(height: 100)
+                            .frame(height: 250)
                     }
                     .padding(.horizontal)
                     Spacer()

@@ -20,6 +20,8 @@
 		D13711B0286BFE8B00A0624C /* BusinessDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D13711AF286BFE8B00A0624C /* BusinessDetailView.swift */; };
 		D13711B2286C026200A0624C /* Color.swift in Sources */ = {isa = PBXBuildFile; fileRef = D13711B1286C026200A0624C /* Color.swift */; };
 		D18593CE2869704200645228 /* Data.swift in Sources */ = {isa = PBXBuildFile; fileRef = D18593CD2869704200645228 /* Data.swift */; };
+		D185DC54287590CF00D1CE06 /* RowImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = D185DC53287590CF00D1CE06 /* RowImage.swift */; };
+		D185DC562875947300D1CE06 /* BusinessRowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D185DC552875947300D1CE06 /* BusinessRowView.swift */; };
 		D1865875286511DE00148A75 /* Pricing.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1865874286511DE00148A75 /* Pricing.swift */; };
 		D1865877286513EB00148A75 /* Models.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1865876286513EB00148A75 /* Models.swift */; };
 		D186588528651BA200148A75 /* Image.swift in Sources */ = {isa = PBXBuildFile; fileRef = D186588428651BA200148A75 /* Image.swift */; };
@@ -50,6 +52,8 @@
 		D13711AF286BFE8B00A0624C /* BusinessDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BusinessDetailView.swift; sourceTree = "<group>"; };
 		D13711B1286C026200A0624C /* Color.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Color.swift; sourceTree = "<group>"; };
 		D18593CD2869704200645228 /* Data.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Data.swift; sourceTree = "<group>"; };
+		D185DC53287590CF00D1CE06 /* RowImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RowImage.swift; sourceTree = "<group>"; };
+		D185DC552875947300D1CE06 /* BusinessRowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BusinessRowView.swift; sourceTree = "<group>"; };
 		D1865874286511DE00148A75 /* Pricing.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Pricing.swift; sourceTree = "<group>"; };
 		D1865876286513EB00148A75 /* Models.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Models.swift; sourceTree = "<group>"; };
 		D186588428651BA200148A75 /* Image.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Image.swift; sourceTree = "<group>"; };
@@ -161,9 +165,19 @@
 			path = "Preview Content";
 			sourceTree = "<group>";
 		};
+		D185DC522875906600D1CE06 /* ContentRow */ = {
+			isa = PBXGroup;
+			children = (
+				D185DC53287590CF00D1CE06 /* RowImage.swift */,
+				D185DC552875947300D1CE06 /* BusinessRowView.swift */,
+			);
+			path = ContentRow;
+			sourceTree = "<group>";
+		};
 		D18658782865199A00148A75 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				D185DC522875906600D1CE06 /* ContentRow */,
 				3D42999C2873A66B00D6846B /* Home */,
 				3D42999D2873A68A00D6846B /* Businesses */,
 				3D58274B287450B300C5F80A /* BusinessDetail */,
@@ -286,9 +300,11 @@
 				D1865875286511DE00148A75 /* Pricing.swift in Sources */,
 				D133265C2861133C0009AA77 /* HomeView.swift in Sources */,
 				D133265A2861133C0009AA77 /* DinersApp.swift in Sources */,
+				D185DC54287590CF00D1CE06 /* RowImage.swift in Sources */,
 				D186588D28676BC300148A75 /* View.swift in Sources */,
 				3D42999B2873A3AC00D6846B /* CardView.swift in Sources */,
 				3D582753287498BE00C5F80A /* BusinessDetailViewModel.swift in Sources */,
+				D185DC562875947300D1CE06 /* BusinessRowView.swift in Sources */,
 				D18CC6672868BBA100E01A2A /* HomeViewModel.swift in Sources */,
 				D13711B0286BFE8B00A0624C /* BusinessDetailView.swift in Sources */,
 				D186588728651C1700148A75 /* BusinessCardView.swift in Sources */,

@@ -17,7 +17,8 @@ struct BusinessCardView: View {
                 Text(business.name)
                     .font(.subheadline)
                     .fontWeight(.semibold)
-                ReviewsView(business: business)
+                ReviewsView(rating: business.rating,
+                            reviewCount: business.reviewCount)
                     .font(.caption)
                     .fontWeight(.regular)
             }

@@ -9,17 +9,22 @@ import SwiftUI
 
 struct ReviewsView: View {
     
-    let business: Business
-    var imageSize: CGSize = .init(width: 10, height: 10)
+    let rating: Double
+    let reviewCount: Int
+    var imageSize: CGFloat = 10
     
     var body: some View {
         HStack(spacing: 4) {
             Image(systemName: "star.fill")
                 .resizable()
-                .frame(width: imageSize.width, height: imageSize.height)
+                .frame(width: imageSize, height: imageSize)
                 .foregroundColor(.yellow)
-            Text(String(format: "%.1f", business.rating))
-            Text("(\(business.reviewCount) reviews)")
+            Text(String(format: "%.1f", rating))
+                .font(.caption)
+                .fontWeight(.regular)
+            Text("(\(reviewCount) reviews)")
+                .font(.caption)
+                .fontWeight(.regular)
         }
     }
 }

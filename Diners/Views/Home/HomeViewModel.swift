@@ -12,6 +12,7 @@ final class HomeViewModel: ObservableObject {
     
     @Published var businesses: [Business] = []
     @Published var selectedCategory: Price?
+    @Published var selectedBusiness: Business?
     let priceCategories: [Price] = Price.allCases
     
     private let businessService: BusinessServiceType
