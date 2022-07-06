@@ -13,20 +13,20 @@ struct BusinessDetailView: View {
     @ObservedObject var viewModel: BusinessDetailViewModel
     
     var body: some View {
-        VStack {
+        VStack(spacing: 0) {
             ImageView(urlString: viewModel.business.imageUrl,
                       width: .infinity,
                       height: 280)
             ScrollView {
                 ScrollViewReader { verticalProxy in
                     VStack(alignment: .leading) {
-                        HStack {
+                        HStack(alignment: .top) {
                             Text(viewModel.business.name)
                                 .font(.title2)
                                 .fontWeight(.semibold)
-                            Spacer(minLength: 0)
+                            Spacer(minLength: 10)
                             ReviewsView(business: viewModel.business,
-                                        imageSize: .init(width: 20, height: 20))
+                                        imageSize: .init(width: 15, height: 15))
                         }
                         .id(0)
                         ForEach(viewModel.detailItems) { detailItem in
@@ -36,10 +36,15 @@ struct BusinessDetailView: View {
                             annotationItems: [viewModel.mapPin]) {
                             MapMarker(coordinate: $0.coordinate)
                         }
-                        .frame(height: 100)
+                        .cornerRadius(10)
+                        .frame(height: 250)
                     }
                     .padding(.horizontal)
+                    .padding(.top)
                     Spacer()
+                    
+                    BookingButton()
+                    
                     otherBusinessesView(viewModel.otherBusinesses,
                                         verticalProxy: verticalProxy)
                 }
@@ -89,8 +94,8 @@ struct BusinessDetailView_Previews: PreviewProvider {
         BusinessDetailView(viewModel: BusinessDetailViewModel(
                     businesses: MockData.businesses,
                     business: MockData.businesses[0]))
-                .previewDevice(PreviewDevice(rawValue: "iPad Pro (12.9-inch) (5th generation)"))
-                            .previewDisplayName("iPad Pro (12.9-inch) (5th generation)")
+                .previewDevice(PreviewDevice(rawValue: "iPad Pro (9.7-inch)"))
+                            .previewDisplayName("iPad Pro (9.7-inch)")
                 
                 BusinessDetailView(viewModel: BusinessDetailViewModel(
                     businesses: MockData.businesses,

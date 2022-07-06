@@ -10,10 +10,7 @@ import SwiftUI
 final class BusinessesViewModel {
     
     let businesses: [Business]
-    let columns = [
-        GridItem(.flexible()),
-        GridItem(.flexible())
-    ]
+    let columns = Array(repeating: GridItem(.adaptive(minimum: 170)), count: 2)
     
     init(businesses: [Business]) {
         self.businesses = businesses

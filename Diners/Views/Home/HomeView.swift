@@ -10,6 +10,7 @@ import SwiftUI
 struct HomeView: View {
     
     @ObservedObject var viewModel: HomeViewModel
+
     
     var body: some View {
         NavigationStack {
@@ -18,6 +19,7 @@ struct HomeView: View {
                     NavigationLink(priceCategory.title, value: priceCategory)
                 }
             }
+            .colorMultiply(Color.tealLight)
             .padding(.horizontal, -16)
             .scrollIndicators(.hidden)
             .navigationTitle("Categories")

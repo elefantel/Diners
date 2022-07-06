@@ -26,6 +26,7 @@ struct BusinessCardView: View {
                    alignment: .topLeading)
             .padding()
         }
+        .contentShape(Rectangle())
         .cardView()
     }
 }

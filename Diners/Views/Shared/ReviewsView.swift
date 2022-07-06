@@ -21,5 +21,6 @@ struct ReviewsView: View {
             Text(String(format: "%.1f", business.rating))
             Text("(\(business.reviewCount) reviews)")
         }
+        .font(.caption)
     }
 }
