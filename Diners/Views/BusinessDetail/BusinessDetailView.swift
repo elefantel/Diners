@@ -19,32 +19,12 @@ struct BusinessDetailView: View {
                       height: 280)
             ScrollView {
                 ScrollViewReader { verticalProxy in
-                    VStack(alignment: .leading) {
-                        HStack(alignment: .top) {
-                            Text(viewModel.business.name)
-                                .font(.title2)
-                                .fontWeight(.semibold)
-                            Spacer(minLength: 0)
-                            ReviewsView(business: viewModel.business,
-                                        imageSize: .init(width: 15, height: 15))
-                        }
-                        .id(0)
-                        ForEach(viewModel.detailItems) { detailItem in
-                            DetailItemView(item: detailItem)
-                        }
-                        Map(coordinateRegion: .constant(viewModel.coordinateRegion),
-                            annotationItems: [viewModel.mapPin]) {
-                            MapMarker(coordinate: $0.coordinate)
-                        }
-                        .cornerRadius(10)
-                        .frame(height: 250)
-                    }
-                    .padding(.horizontal)
-                    .padding(.top)
+                    businessInfoView
                     Spacer()
-                    
-                    BookingButton()
-                    
+                    NavigationLink(value: Route.booking(viewModel.business)) {
+                        PrimaryButtonView(image: "calendar", text: "Make a booking")
+                            .padding(.horizontal)
+                    }
                     otherBusinessesView(viewModel.otherBusinesses,
                                         verticalProxy: verticalProxy)
                 }
@@ -54,10 +34,35 @@ struct BusinessDetailView: View {
     }
 }
 
-extension BusinessDetailView {
+private extension BusinessDetailView {
+    
+    var businessInfoView: some View {
+        VStack(alignment: .leading) {
+            HStack(alignment: .top) {
+                Text(viewModel.business.name)
+                    .font(.title2)
+                    .fontWeight(.semibold)
+                Spacer(minLength: 0)
+                ReviewsView(business: viewModel.business,
+                            imageSize: .init(width: 15, height: 15))
+            }
+            .id(0)
+            ForEach(viewModel.detailItems) { detailItem in
+                DetailItemView(item: detailItem)
+            }
+            Map(coordinateRegion: .constant(viewModel.coordinateRegion),
+                annotationItems: [viewModel.mapPin]) {
+                MapMarker(coordinate: $0.coordinate)
+            }
+            .cornerRadius(10)
+            .frame(height: 250)
+        }
+        .padding(.horizontal)
+        .padding(.top)
+    }
     
     @ViewBuilder
-    private func otherBusinessesView(_ businesses: [Business],
+    func otherBusinessesView(_ businesses: [Business],
                                      verticalProxy: ScrollViewProxy) -> some View {
         if viewModel.otherBusinesses.count > 0 {
             VStack(alignment: .leading) {

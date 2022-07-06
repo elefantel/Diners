@@ -18,14 +18,13 @@ struct ImageView: View {
             url: URL(string: urlString),
             content: { image in
                 image
-                    .resizable()
-                    .aspectRatio(contentMode: .fill)
-                    .frame(width: width, height: height)
+                    .sizeToFit(width: width, height: height)
                     .clipped()
             },
             placeholder: {
                 ProgressView()
             }
         )
+        .frame(height: height)
     }
 }

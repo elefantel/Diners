@@ -8,6 +8,6 @@
 import Foundation
 
 enum Route: Hashable {
-    case businesses(Price)
     case businessDetail(Business)
+    case booking(Business)
 }

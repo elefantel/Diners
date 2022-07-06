@@ -5,14 +5,16 @@
 //  Created by Mpendulo Ndlovu on 2022/06/26.
 //
 
-import Foundation
+import SwiftUI
 
 @MainActor
 final class HomeViewModel: ObservableObject {
     
     @Published var businesses: [Business] = []
-    @Published var selectedCategory: Price?
+    @Published var selectedCategory: Price = .all
+    @Published var searchQuery = ""
     let priceCategories: [Price] = Price.allCases
+    let columns = Array(repeating: GridItem(.adaptive(minimum: 170)), count: 2)
     
     private let businessService: BusinessServiceType
     
