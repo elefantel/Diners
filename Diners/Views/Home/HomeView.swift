@@ -63,6 +63,7 @@ struct HomeView: View {
                 }
             }
         }
+        .accentColor(Color.tealDark)
     }    
 }
 

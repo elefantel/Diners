@@ -36,7 +36,8 @@ struct BusinessDetailView: View {
                             annotationItems: [viewModel.mapPin]) {
                             MapMarker(coordinate: $0.coordinate)
                         }
-                            .frame(height: 250)
+                        .cornerRadius(10)
+                        .frame(height: 250)
                     }
                     .padding(.horizontal)
                     Spacer()
