@@ -15,7 +15,7 @@ struct BusinessesView: View {
         ScrollView {
             LazyVGrid(columns: viewModel.columns, spacing: 10) {
                 ForEach(viewModel.businesses) { business in
-                    NavigationLink(value: business) {
+                    NavigationLink(value: Route.businessDetail(business)) {
                         BusinessCardView(business: business)
                     }
                 }

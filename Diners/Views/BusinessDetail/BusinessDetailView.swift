@@ -24,7 +24,7 @@ struct BusinessDetailView: View {
                             Text(viewModel.business.name)
                                 .font(.title2)
                                 .fontWeight(.semibold)
-                            Spacer(minLength: 10)
+                            Spacer(minLength: 0)
                             ReviewsView(business: viewModel.business,
                                         imageSize: .init(width: 15, height: 15))
                         }
