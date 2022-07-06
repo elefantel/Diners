@@ -9,22 +9,23 @@ import SwiftUI
 
 struct CardView: ViewModifier {
     
-    let size: CGSize
+    let height: CGFloat
     
     func body(content: Content) -> some View {
         content
+            .background(.white)
             .clipShape(RoundedRectangle(cornerRadius: 16, style: .continuous))
             .overlay(
                 RoundedRectangle(cornerRadius: 16, style: .continuous)
                     .stroke(.white, lineWidth: 2)
                     .shadow(color: .black.opacity(0.6), radius: 2))
-            .frame(width: size.width, height: size.height)
+            .frame(height: height)
     }
 }
 
 extension View {
     
-    func cardView(size: CGSize = CGSize(width: 170, height: 300)) -> some View {
-        modifier(CardView(size: size))
+    func cardView(height: CGFloat = 220) -> some View {
+        modifier(CardView(height: height))
     }
 }

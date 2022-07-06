@@ -15,7 +15,6 @@ struct BusinessDetailView: View {
     var body: some View {
         VStack {
             ImageView(urlString: viewModel.business.imageUrl,
-                      width: .infinity,
                       height: 300)
             ScrollView {
                 ScrollViewReader { reader in
@@ -49,6 +48,7 @@ struct BusinessDetailView: View {
                                 HStack(spacing: 8) {
                                     ForEach(viewModel.otherBusinesses) { business in
                                         BusinessCardView(business: business)
+                                            .frame(width: 240)
                                             .onTapGesture {
                                                 withAnimation { viewModel.business = business }
                                             }
