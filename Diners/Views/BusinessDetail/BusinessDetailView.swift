@@ -43,7 +43,7 @@ struct BusinessDetailView: View {
                     Spacer()
                     if !viewModel.otherBusinesses.isEmpty {
                         VStack(alignment: .leading) {
-                            Text("Other restaurants")
+                            Text("Other businesses")
                                 .font(.headline)
                             ScrollView(.horizontal) {
                                 HStack(spacing: 8) {

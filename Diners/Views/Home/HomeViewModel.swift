@@ -10,6 +10,7 @@ import Foundation
 @MainActor
 final class HomeViewModel: ObservableObject {
     
+    @Published var searchQuery = "meat"
     @Published var businesses: [Business] = []
     @Published var selectedCategory: Price?
     @Published var selectedBusiness: Business?
@@ -25,7 +26,7 @@ final class HomeViewModel: ObservableObject {
         try await businessService.business(id: id)
     }
     
-    func businesses(from query: String = "meat") async throws {
+    func businesses(from query: String) async throws {
         businesses = try await businessService.businesses(from: query)
     }
     

@@ -25,7 +25,7 @@ struct HomeView: View {
             .onAppear {
                 Task.init {
                     do {
-                        try await viewModel.businesses()
+                        try await viewModel.businesses(from: viewModel.searchQuery)
                     } catch {
                         print(error)
                     }
@@ -40,6 +40,12 @@ struct HomeView: View {
                             BusinessRowView(business: business)
                         }
                     }
+                         .searchable(text: $viewModel.searchQuery)
+                         .onChange(of: viewModel.searchQuery) { query in
+                             Task.init {
+                                try await viewModel.businesses(from: query)
+                             }
+                         }
                     .scrollIndicators(.hidden)
                     .navigationTitle(category.title)
                 } else {

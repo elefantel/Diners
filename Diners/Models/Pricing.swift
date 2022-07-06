@@ -9,6 +9,7 @@ import Foundation
 
 enum Price: String, CaseIterable, Identifiable {
     
+    case all
     case budget = "$"
     case pricey = "$$"
     case bigSpender = "$$$"
@@ -18,6 +19,7 @@ enum Price: String, CaseIterable, Identifiable {
     
     var title: String {
         switch self {
+        case .all: return "All Prices"
         case .budget: return "Budget"
         case .pricey: return "Pricey"
         case .bigSpender: return "Big Spenders"
@@ -28,7 +30,9 @@ enum Price: String, CaseIterable, Identifiable {
 
 extension Array where Element == Business {
     func byPricing(_ price: Price?) -> [Element] {
-        filter { $0.price == price?.rawValue }
+        price == .all
+        ? self
+        : filter { $0.price == price?.rawValue }
     }
 }
 
