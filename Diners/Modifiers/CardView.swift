@@ -20,6 +20,7 @@ struct CardView: ViewModifier {
                     .stroke(.white, lineWidth: 2)
                     .shadow(color: .black.opacity(0.6), radius: 2))
             .frame(height: height)
+            .padding(2)
     }
 }
 
