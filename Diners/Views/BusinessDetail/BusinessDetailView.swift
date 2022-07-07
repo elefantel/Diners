@@ -37,7 +37,7 @@ struct BusinessDetailView: View {
                             MapMarker(coordinate: $0.coordinate)
                         }
                         .cornerRadius(10)
-                        .frame(height: 250)
+                        .frame(height: 200)
                     }
                     .padding(.horizontal)
                     Spacer()
