@@ -30,7 +30,7 @@ final class HomeViewModel: ObservableObject {
         businesses = try await businessService.businesses(from: query)
     }
     
-    func showSection(for category: Price ) -> Bool {
+    func showSection(for category: Price) -> Bool {
         !businesses.byPricing(category).isEmpty
     }
 }

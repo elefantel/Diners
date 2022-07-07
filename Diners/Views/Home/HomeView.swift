@@ -22,13 +22,11 @@ struct HomeView: View {
             .padding(.horizontal, -16)
             .scrollIndicators(.hidden)
             .navigationTitle("Categories")
-            .onAppear {
-                Task.init {
-                    do {
-                        try await viewModel.businesses(from: viewModel.searchQuery)
-                    } catch {
-                        print(error)
-                    }
+            .task {
+                do {
+                    try await viewModel.businesses(from: viewModel.searchQuery)
+                } catch {
+                    print(error)
                 }
             }
         } content: {
@@ -50,6 +48,7 @@ struct HomeView: View {
                     .navigationTitle(category.title)
                 } else {
                     Text("Select price category")
+                        .foregroundColor(.gray)
                 }
             }
         } detail: {
@@ -60,6 +59,7 @@ struct HomeView: View {
                         business: business))
                 } else {
                     Text("Select business")
+                        .foregroundColor(.gray)
                 }
             }
         }

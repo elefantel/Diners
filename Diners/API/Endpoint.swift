@@ -46,7 +46,7 @@ enum Endpoint {
         let url = components
             .url?
             .absoluteString ?? ""
-        
+        // e.g https://api.yelp.com/v3/businesses/search?limit=50&location=San%20Jose&term=vegan%20restaurants
         return baseUrl
             .appending(path ?? "")
             .appending(url)

@@ -34,6 +34,11 @@
 		D18CC6632868ADA600E01A2A /* Error.swift in Sources */ = {isa = PBXBuildFile; fileRef = D18CC6622868ADA600E01A2A /* Error.swift */; };
 		D18CC6672868BBA100E01A2A /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D18CC6662868BBA100E01A2A /* HomeViewModel.swift */; };
 		D18CC6692868BE4500E01A2A /* BusinessService.swift in Sources */ = {isa = PBXBuildFile; fileRef = D18CC6682868BE4500E01A2A /* BusinessService.swift */; };
+		D1978AD9287626940089844B /* ChatRowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1978AD8287626940089844B /* ChatRowView.swift */; };
+		D1978ADD28762BCA0089844B /* ChatsListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1978ADC28762BCA0089844B /* ChatsListView.swift */; };
+		D1978ADF2876301B0089844B /* ProfilePreview.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1978ADE2876301B0089844B /* ProfilePreview.swift */; };
+		D1978AE1287630BB0089844B /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1978AE0287630BB0089844B /* SettingsView.swift */; };
+		D1978AE32876314B0089844B /* WhatsAppLiteView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1978AE22876314B0089844B /* WhatsAppLiteView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -66,6 +71,11 @@
 		D18CC6622868ADA600E01A2A /* Error.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Error.swift; sourceTree = "<group>"; };
 		D18CC6662868BBA100E01A2A /* HomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
 		D18CC6682868BE4500E01A2A /* BusinessService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BusinessService.swift; sourceTree = "<group>"; };
+		D1978AD8287626940089844B /* ChatRowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatRowView.swift; sourceTree = "<group>"; };
+		D1978ADC28762BCA0089844B /* ChatsListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatsListView.swift; sourceTree = "<group>"; };
+		D1978ADE2876301B0089844B /* ProfilePreview.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfilePreview.swift; sourceTree = "<group>"; };
+		D1978AE0287630BB0089844B /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
+		D1978AE22876314B0089844B /* WhatsAppLiteView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WhatsAppLiteView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -177,6 +187,7 @@
 		D18658782865199A00148A75 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				D1978AD72876264E0089844B /* Demo Views */,
 				D185DC522875906600D1CE06 /* ContentRow */,
 				3D42999C2873A66B00D6846B /* Home */,
 				3D42999D2873A68A00D6846B /* Businesses */,
@@ -216,6 +227,18 @@
 				D18CC6682868BE4500E01A2A /* BusinessService.swift */,
 			);
 			path = API;
+			sourceTree = "<group>";
+		};
+		D1978AD72876264E0089844B /* Demo Views */ = {
+			isa = PBXGroup;
+			children = (
+				D1978AD8287626940089844B /* ChatRowView.swift */,
+				D1978ADC28762BCA0089844B /* ChatsListView.swift */,
+				D1978ADE2876301B0089844B /* ProfilePreview.swift */,
+				D1978AE0287630BB0089844B /* SettingsView.swift */,
+				D1978AE22876314B0089844B /* WhatsAppLiteView.swift */,
+			);
+			path = "Demo Views";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -293,10 +316,12 @@
 				3D58274E287467AB00C5F80A /* ImageView.swift in Sources */,
 				D186588B2866CEEF00148A75 /* BusinessesView.swift in Sources */,
 				D186589328679A1300148A75 /* Network.swift in Sources */,
+				D1978AD9287626940089844B /* ChatRowView.swift in Sources */,
 				3D582751287498AB00C5F80A /* DetailItemView.swift in Sources */,
 				D18CC6632868ADA600E01A2A /* Error.swift in Sources */,
 				D18CC6692868BE4500E01A2A /* BusinessService.swift in Sources */,
 				D186588528651BA200148A75 /* Image.swift in Sources */,
+				D1978ADD28762BCA0089844B /* ChatsListView.swift in Sources */,
 				D1865875286511DE00148A75 /* Pricing.swift in Sources */,
 				D133265C2861133C0009AA77 /* HomeView.swift in Sources */,
 				D133265A2861133C0009AA77 /* DinersApp.swift in Sources */,
@@ -304,6 +329,8 @@
 				D186588D28676BC300148A75 /* View.swift in Sources */,
 				3D42999B2873A3AC00D6846B /* CardView.swift in Sources */,
 				3D582753287498BE00C5F80A /* BusinessDetailViewModel.swift in Sources */,
+				D1978AE1287630BB0089844B /* SettingsView.swift in Sources */,
+				D1978ADF2876301B0089844B /* ProfilePreview.swift in Sources */,
 				D185DC562875947300D1CE06 /* BusinessRowView.swift in Sources */,
 				D18CC6672868BBA100E01A2A /* HomeViewModel.swift in Sources */,
 				D13711B0286BFE8B00A0624C /* BusinessDetailView.swift in Sources */,
@@ -312,6 +339,7 @@
 				3D5827572874A00C00C5F80A /* BusinessesViewModel.swift in Sources */,
 				D186589128678D2800148A75 /* Endpoint.swift in Sources */,
 				D18593CE2869704200645228 /* Data.swift in Sources */,
+				D1978AE32876314B0089844B /* WhatsAppLiteView.swift in Sources */,
 				D13711B2286C026200A0624C /* Color.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
