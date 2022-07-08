@@ -7,6 +7,12 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3D42999B2873A3AC00D6846B /* CardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D42999A2873A3AC00D6846B /* CardView.swift */; };
+		3D58274E287467AB00C5F80A /* ImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D58274D287467AB00C5F80A /* ImageView.swift */; };
+		3D582751287498AB00C5F80A /* DetailItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D582750287498AB00C5F80A /* DetailItemView.swift */; };
+		3D582753287498BE00C5F80A /* BusinessDetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D582752287498BE00C5F80A /* BusinessDetailViewModel.swift */; };
+		3D58275528749B3400C5F80A /* ReviewsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D58275428749B3400C5F80A /* ReviewsView.swift */; };
+		3D5827572874A00C00C5F80A /* BusinessesViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D5827562874A00C00C5F80A /* BusinessesViewModel.swift */; };
 		D133265A2861133C0009AA77 /* DinersApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = D13326592861133C0009AA77 /* DinersApp.swift */; };
 		D133265C2861133C0009AA77 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D133265B2861133C0009AA77 /* HomeView.swift */; };
 		D133265E2861133D0009AA77 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D133265D2861133D0009AA77 /* Assets.xcassets */; };
@@ -14,10 +20,12 @@
 		D13711B0286BFE8B00A0624C /* BusinessDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D13711AF286BFE8B00A0624C /* BusinessDetailView.swift */; };
 		D13711B2286C026200A0624C /* Color.swift in Sources */ = {isa = PBXBuildFile; fileRef = D13711B1286C026200A0624C /* Color.swift */; };
 		D18593CE2869704200645228 /* Data.swift in Sources */ = {isa = PBXBuildFile; fileRef = D18593CD2869704200645228 /* Data.swift */; };
+		D185DC54287590CF00D1CE06 /* RowImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = D185DC53287590CF00D1CE06 /* RowImage.swift */; };
+		D185DC562875947300D1CE06 /* BusinessRowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D185DC552875947300D1CE06 /* BusinessRowView.swift */; };
 		D1865875286511DE00148A75 /* Pricing.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1865874286511DE00148A75 /* Pricing.swift */; };
 		D1865877286513EB00148A75 /* Models.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1865876286513EB00148A75 /* Models.swift */; };
 		D186588528651BA200148A75 /* Image.swift in Sources */ = {isa = PBXBuildFile; fileRef = D186588428651BA200148A75 /* Image.swift */; };
-		D186588728651C1700148A75 /* BusinessView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D186588628651C1700148A75 /* BusinessView.swift */; };
+		D186588728651C1700148A75 /* BusinessCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D186588628651C1700148A75 /* BusinessCardView.swift */; };
 		D18658892866C36B00148A75 /* MockData.swift in Sources */ = {isa = PBXBuildFile; fileRef = D18658882866C36B00148A75 /* MockData.swift */; };
 		D186588B2866CEEF00148A75 /* BusinessesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D186588A2866CEEF00148A75 /* BusinessesView.swift */; };
 		D186588D28676BC300148A75 /* View.swift in Sources */ = {isa = PBXBuildFile; fileRef = D186588C28676BC300148A75 /* View.swift */; };
@@ -26,9 +34,20 @@
 		D18CC6632868ADA600E01A2A /* Error.swift in Sources */ = {isa = PBXBuildFile; fileRef = D18CC6622868ADA600E01A2A /* Error.swift */; };
 		D18CC6672868BBA100E01A2A /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D18CC6662868BBA100E01A2A /* HomeViewModel.swift */; };
 		D18CC6692868BE4500E01A2A /* BusinessService.swift in Sources */ = {isa = PBXBuildFile; fileRef = D18CC6682868BE4500E01A2A /* BusinessService.swift */; };
+		D1978AD9287626940089844B /* ChatRowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1978AD8287626940089844B /* ChatRowView.swift */; };
+		D1978ADD28762BCA0089844B /* ChatsListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1978ADC28762BCA0089844B /* ChatsListView.swift */; };
+		D1978ADF2876301B0089844B /* ProfilePreview.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1978ADE2876301B0089844B /* ProfilePreview.swift */; };
+		D1978AE1287630BB0089844B /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1978AE0287630BB0089844B /* SettingsView.swift */; };
+		D1978AE32876314B0089844B /* WhatsAppLiteView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1978AE22876314B0089844B /* WhatsAppLiteView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		3D42999A2873A3AC00D6846B /* CardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardView.swift; sourceTree = "<group>"; };
+		3D58274D287467AB00C5F80A /* ImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageView.swift; sourceTree = "<group>"; };
+		3D582750287498AB00C5F80A /* DetailItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailItemView.swift; sourceTree = "<group>"; };
+		3D582752287498BE00C5F80A /* BusinessDetailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BusinessDetailViewModel.swift; sourceTree = "<group>"; };
+		3D58275428749B3400C5F80A /* ReviewsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReviewsView.swift; sourceTree = "<group>"; };
+		3D5827562874A00C00C5F80A /* BusinessesViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BusinessesViewModel.swift; sourceTree = "<group>"; };
 		D13326562861133C0009AA77 /* Diners.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Diners.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D13326592861133C0009AA77 /* DinersApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DinersApp.swift; sourceTree = "<group>"; };
 		D133265B2861133C0009AA77 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
@@ -38,10 +57,12 @@
 		D13711AF286BFE8B00A0624C /* BusinessDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BusinessDetailView.swift; sourceTree = "<group>"; };
 		D13711B1286C026200A0624C /* Color.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Color.swift; sourceTree = "<group>"; };
 		D18593CD2869704200645228 /* Data.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Data.swift; sourceTree = "<group>"; };
+		D185DC53287590CF00D1CE06 /* RowImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RowImage.swift; sourceTree = "<group>"; };
+		D185DC552875947300D1CE06 /* BusinessRowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BusinessRowView.swift; sourceTree = "<group>"; };
 		D1865874286511DE00148A75 /* Pricing.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Pricing.swift; sourceTree = "<group>"; };
 		D1865876286513EB00148A75 /* Models.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Models.swift; sourceTree = "<group>"; };
 		D186588428651BA200148A75 /* Image.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Image.swift; sourceTree = "<group>"; };
-		D186588628651C1700148A75 /* BusinessView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BusinessView.swift; sourceTree = "<group>"; };
+		D186588628651C1700148A75 /* BusinessCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BusinessCardView.swift; sourceTree = "<group>"; };
 		D18658882866C36B00148A75 /* MockData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockData.swift; sourceTree = "<group>"; };
 		D186588A2866CEEF00148A75 /* BusinessesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BusinessesView.swift; sourceTree = "<group>"; };
 		D186588C28676BC300148A75 /* View.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = View.swift; sourceTree = "<group>"; };
@@ -50,6 +71,11 @@
 		D18CC6622868ADA600E01A2A /* Error.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Error.swift; sourceTree = "<group>"; };
 		D18CC6662868BBA100E01A2A /* HomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
 		D18CC6682868BE4500E01A2A /* BusinessService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BusinessService.swift; sourceTree = "<group>"; };
+		D1978AD8287626940089844B /* ChatRowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatRowView.swift; sourceTree = "<group>"; };
+		D1978ADC28762BCA0089844B /* ChatsListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatsListView.swift; sourceTree = "<group>"; };
+		D1978ADE2876301B0089844B /* ProfilePreview.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfilePreview.swift; sourceTree = "<group>"; };
+		D1978AE0287630BB0089844B /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
+		D1978AE22876314B0089844B /* WhatsAppLiteView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WhatsAppLiteView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -63,6 +89,52 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		3D4299992873A39400D6846B /* Modifiers */ = {
+			isa = PBXGroup;
+			children = (
+				3D42999A2873A3AC00D6846B /* CardView.swift */,
+			);
+			path = Modifiers;
+			sourceTree = "<group>";
+		};
+		3D42999C2873A66B00D6846B /* Home */ = {
+			isa = PBXGroup;
+			children = (
+				D133265B2861133C0009AA77 /* HomeView.swift */,
+				D18CC6662868BBA100E01A2A /* HomeViewModel.swift */,
+			);
+			path = Home;
+			sourceTree = "<group>";
+		};
+		3D42999D2873A68A00D6846B /* Businesses */ = {
+			isa = PBXGroup;
+			children = (
+				D186588A2866CEEF00148A75 /* BusinessesView.swift */,
+				3D5827562874A00C00C5F80A /* BusinessesViewModel.swift */,
+			);
+			path = Businesses;
+			sourceTree = "<group>";
+		};
+		3D58274B287450B300C5F80A /* BusinessDetail */ = {
+			isa = PBXGroup;
+			children = (
+				D13711AF286BFE8B00A0624C /* BusinessDetailView.swift */,
+				3D582752287498BE00C5F80A /* BusinessDetailViewModel.swift */,
+			);
+			path = BusinessDetail;
+			sourceTree = "<group>";
+		};
+		3D58274F28748CB300C5F80A /* Shared */ = {
+			isa = PBXGroup;
+			children = (
+				D186588628651C1700148A75 /* BusinessCardView.swift */,
+				3D58274D287467AB00C5F80A /* ImageView.swift */,
+				3D582750287498AB00C5F80A /* DetailItemView.swift */,
+				3D58275428749B3400C5F80A /* ReviewsView.swift */,
+			);
+			path = Shared;
+			sourceTree = "<group>";
+		};
 		D133264D2861133C0009AA77 = {
 			isa = PBXGroup;
 			children = (
@@ -85,7 +157,8 @@
 				D186588F28678D1900148A75 /* API */,
 				D186588E28678CBD00148A75 /* Models */,
 				D186588128651AB300148A75 /* Extensions */,
-				D18658782865199A00148A75 /* Components */,
+				3D4299992873A39400D6846B /* Modifiers */,
+				D18658782865199A00148A75 /* Views */,
 				D13326592861133C0009AA77 /* DinersApp.swift */,
 				D133265D2861133D0009AA77 /* Assets.xcassets */,
 				D133265F2861133D0009AA77 /* Diners.entitlements */,
@@ -102,16 +175,26 @@
 			path = "Preview Content";
 			sourceTree = "<group>";
 		};
-		D18658782865199A00148A75 /* Components */ = {
+		D185DC522875906600D1CE06 /* ContentRow */ = {
 			isa = PBXGroup;
 			children = (
-				D186588628651C1700148A75 /* BusinessView.swift */,
-				D186588A2866CEEF00148A75 /* BusinessesView.swift */,
-				D18CC6662868BBA100E01A2A /* HomeViewModel.swift */,
-				D133265B2861133C0009AA77 /* HomeView.swift */,
-				D13711AF286BFE8B00A0624C /* BusinessDetailView.swift */,
+				D185DC53287590CF00D1CE06 /* RowImage.swift */,
+				D185DC552875947300D1CE06 /* BusinessRowView.swift */,
 			);
-			path = Components;
+			path = ContentRow;
+			sourceTree = "<group>";
+		};
+		D18658782865199A00148A75 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				D1978AD72876264E0089844B /* Demo Views */,
+				D185DC522875906600D1CE06 /* ContentRow */,
+				3D42999C2873A66B00D6846B /* Home */,
+				3D42999D2873A68A00D6846B /* Businesses */,
+				3D58274B287450B300C5F80A /* BusinessDetail */,
+				3D58274F28748CB300C5F80A /* Shared */,
+			);
+			path = Views;
 			sourceTree = "<group>";
 		};
 		D186588128651AB300148A75 /* Extensions */ = {
@@ -144,6 +227,18 @@
 				D18CC6682868BE4500E01A2A /* BusinessService.swift */,
 			);
 			path = API;
+			sourceTree = "<group>";
+		};
+		D1978AD72876264E0089844B /* Demo Views */ = {
+			isa = PBXGroup;
+			children = (
+				D1978AD8287626940089844B /* ChatRowView.swift */,
+				D1978ADC28762BCA0089844B /* ChatsListView.swift */,
+				D1978ADE2876301B0089844B /* ProfilePreview.swift */,
+				D1978AE0287630BB0089844B /* SettingsView.swift */,
+				D1978AE22876314B0089844B /* WhatsAppLiteView.swift */,
+			);
+			path = "Demo Views";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -216,22 +311,35 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3D58275528749B3400C5F80A /* ReviewsView.swift in Sources */,
 				D18658892866C36B00148A75 /* MockData.swift in Sources */,
+				3D58274E287467AB00C5F80A /* ImageView.swift in Sources */,
 				D186588B2866CEEF00148A75 /* BusinessesView.swift in Sources */,
 				D186589328679A1300148A75 /* Network.swift in Sources */,
+				D1978AD9287626940089844B /* ChatRowView.swift in Sources */,
+				3D582751287498AB00C5F80A /* DetailItemView.swift in Sources */,
 				D18CC6632868ADA600E01A2A /* Error.swift in Sources */,
 				D18CC6692868BE4500E01A2A /* BusinessService.swift in Sources */,
 				D186588528651BA200148A75 /* Image.swift in Sources */,
+				D1978ADD28762BCA0089844B /* ChatsListView.swift in Sources */,
 				D1865875286511DE00148A75 /* Pricing.swift in Sources */,
 				D133265C2861133C0009AA77 /* HomeView.swift in Sources */,
 				D133265A2861133C0009AA77 /* DinersApp.swift in Sources */,
+				D185DC54287590CF00D1CE06 /* RowImage.swift in Sources */,
 				D186588D28676BC300148A75 /* View.swift in Sources */,
+				3D42999B2873A3AC00D6846B /* CardView.swift in Sources */,
+				3D582753287498BE00C5F80A /* BusinessDetailViewModel.swift in Sources */,
+				D1978AE1287630BB0089844B /* SettingsView.swift in Sources */,
+				D1978ADF2876301B0089844B /* ProfilePreview.swift in Sources */,
+				D185DC562875947300D1CE06 /* BusinessRowView.swift in Sources */,
 				D18CC6672868BBA100E01A2A /* HomeViewModel.swift in Sources */,
 				D13711B0286BFE8B00A0624C /* BusinessDetailView.swift in Sources */,
-				D186588728651C1700148A75 /* BusinessView.swift in Sources */,
+				D186588728651C1700148A75 /* BusinessCardView.swift in Sources */,
 				D1865877286513EB00148A75 /* Models.swift in Sources */,
+				3D5827572874A00C00C5F80A /* BusinessesViewModel.swift in Sources */,
 				D186589128678D2800148A75 /* Endpoint.swift in Sources */,
 				D18593CE2869704200645228 /* Data.swift in Sources */,
+				D1978AE32876314B0089844B /* WhatsAppLiteView.swift in Sources */,
 				D13711B2286C026200A0624C /* Color.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
