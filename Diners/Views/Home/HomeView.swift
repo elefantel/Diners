@@ -29,8 +29,10 @@ struct HomeView: View {
             .navigationDestination(for: Route.self) { route in
                 switch route {
                 case let .businessDetail(business):
-                    BusinessDetailView(viewModel: BusinessDetailViewModel(
-                        businesses: viewModel.businesses.byPricing(viewModel.selectedCategory),
+                    BusinessDetailView(
+                        viewModel: BusinessDetailViewModel(
+                        businesses: viewModel.businesses
+                            .byPricing(viewModel.selectedCategory),
                         business: business))
                     .buttonStyle(PlainButtonStyle())
                 case let .booking(business):

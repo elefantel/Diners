@@ -35,11 +35,17 @@ final class BusinessDetailViewModel: ObservableObject {
     }
     
     var coordinate: CLLocationCoordinate2D {
-        .init(latitude: business.coordinates.latitude, longitude: business.coordinates.longitude)
+        .init(
+            latitude: business.coordinates.latitude,
+            longitude: business.coordinates.longitude)
     }
     
     var coordinateRegion: MKCoordinateRegion {
-        .init(center: coordinate, span: MKCoordinateSpan(latitudeDelta: 0.05, longitudeDelta: 0.05))
+        .init(
+            center: coordinate,
+            span: MKCoordinateSpan(
+                latitudeDelta: 0.05,
+                longitudeDelta: 0.05))
     }
     
     let businesses: [Business]

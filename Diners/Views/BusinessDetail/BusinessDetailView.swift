@@ -14,8 +14,9 @@ struct BusinessDetailView: View {
     
     var body: some View {
         VStack(spacing: 0) {
-            ImageView(urlString: viewModel.business.imageUrl,
-                      height: 300)
+            ImageView(
+                urlString: viewModel.business.imageUrl,
+                height: 300)
             ScrollView {
                 ScrollViewReader { verticalProxy in
                     businessInfoView
@@ -24,8 +25,9 @@ struct BusinessDetailView: View {
                         PrimaryButtonView(image: "calendar", text: "Make a booking")
                             .padding(.horizontal)
                     }
-                    otherBusinessesView(viewModel.otherBusinesses,
-                                        verticalProxy: verticalProxy)
+                    otherBusinessesView(
+                        viewModel.otherBusinesses,
+                        verticalProxy: verticalProxy)
                 }
             }
         }
@@ -42,19 +44,17 @@ private extension BusinessDetailView {
                     .font(.title2)
                     .fontWeight(.semibold)
                 Spacer(minLength: 0)
-                ReviewsView(business: viewModel.business,
-                            imageSize: .init(width: 20, height: 20))
+                ReviewsView(
+                    business: viewModel.business,
+                    imageSize: .init(width: 20, height: 20))
             }
             .id(0)
             ForEach(viewModel.detailItems) { detailItem in
                 DetailItemView(item: detailItem)
             }
-            Map(coordinateRegion: .constant(viewModel.coordinateRegion),
-                annotationItems: [viewModel.mapPin]) {
-                MapMarker(coordinate: $0.coordinate)
-            }
-            .cornerRadius(10)
-            .frame(height: 200)
+            MapView(
+                items: [viewModel.mapPin],
+                region: .constant(viewModel.coordinateRegion))
         }
         .padding(.horizontal)
         .padding(.top)
@@ -96,17 +96,19 @@ private extension BusinessDetailView {
 
 struct BusinessDetailView_Previews: PreviewProvider {
     static var previews: some View {
-        BusinessDetailView(viewModel: BusinessDetailViewModel(
-                    businesses: MockData.businesses,
-                    business: MockData.businesses[0]))
-                .previewDevice(PreviewDevice(rawValue: "iPad Pro (9.7-inch)"))
-                            .previewDisplayName("iPad Pro (9.7-inch)")
+        BusinessDetailView(
+            viewModel: BusinessDetailViewModel(
+                businesses: MockData.businesses,
+                business: MockData.businesses[0]))
+        .previewDevice(PreviewDevice(rawValue: "iPad Pro (9.7-inch)"))
+        .previewDisplayName("iPad Pro (9.7-inch)")
                 
-                BusinessDetailView(viewModel: BusinessDetailViewModel(
-                    businesses: MockData.businesses,
-                    business: MockData.businesses[0]))
-                .previewDevice(PreviewDevice(rawValue: "iPhone 13 Pro Max"))
-                            .previewDisplayName("iPhone 13 Pro Max")
+        BusinessDetailView(
+            viewModel: BusinessDetailViewModel(
+            businesses: MockData.businesses,
+            business: MockData.businesses[0]))
+        .previewDevice(PreviewDevice(rawValue: "iPhone 13 Pro Max"))
+        .previewDisplayName("iPhone 13 Pro Max")
     }
 }
 
