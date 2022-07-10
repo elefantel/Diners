@@ -9,10 +9,8 @@ import MapKit
 
 final class BusinessDetailViewModel: ObservableObject {
     
-    let businesses: [Business]
-    
     @Published var business: Business
-    
+
     var otherBusinesses: [Business] {
         businesses.filter { $0.id != business.id }
     }
@@ -43,6 +41,8 @@ final class BusinessDetailViewModel: ObservableObject {
     var coordinateRegion: MKCoordinateRegion {
         .init(center: coordinate, span: MKCoordinateSpan(latitudeDelta: 0.05, longitudeDelta: 0.05))
     }
+    
+    let businesses: [Business]
     
     init(businesses: [Business], business: Business) {
         self.businesses = businesses
