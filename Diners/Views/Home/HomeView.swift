@@ -34,7 +34,7 @@ struct HomeView: View {
                         business: business))
                     .buttonStyle(PlainButtonStyle())
                 case let .booking(business):
-                    BookingView(business: business)
+                    BookingView(viewModel: BookingViewModel(business: business))
                 }
             }
         }

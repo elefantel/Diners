@@ -19,6 +19,7 @@
 		3D58276228758AC200C5F80A /* PrimaryButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D58276128758AC200C5F80A /* PrimaryButton.swift */; };
 		3DF3488E287B62B000BC73A0 /* PickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DF3488D287B62B000BC73A0 /* PickerView.swift */; };
 		3DF34890287B63AC00BC73A0 /* GridView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DF3488F287B63AC00BC73A0 /* GridView.swift */; };
+		3DF34892287B676700BC73A0 /* BookingViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DF34891287B676700BC73A0 /* BookingViewModel.swift */; };
 		D133265A2861133C0009AA77 /* DinersApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = D13326592861133C0009AA77 /* DinersApp.swift */; };
 		D133265C2861133C0009AA77 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D133265B2861133C0009AA77 /* HomeView.swift */; };
 		D133265E2861133D0009AA77 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D133265D2861133D0009AA77 /* Assets.xcassets */; };
@@ -51,6 +52,7 @@
 		3D58276128758AC200C5F80A /* PrimaryButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrimaryButton.swift; sourceTree = "<group>"; };
 		3DF3488D287B62B000BC73A0 /* PickerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PickerView.swift; sourceTree = "<group>"; };
 		3DF3488F287B63AC00BC73A0 /* GridView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GridView.swift; sourceTree = "<group>"; };
+		3DF34891287B676700BC73A0 /* BookingViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookingViewModel.swift; sourceTree = "<group>"; };
 		D13326562861133C0009AA77 /* Diners.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Diners.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D13326592861133C0009AA77 /* DinersApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DinersApp.swift; sourceTree = "<group>"; };
 		D133265B2861133C0009AA77 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
@@ -129,6 +131,7 @@
 			isa = PBXGroup;
 			children = (
 				3D58275F2875889200C5F80A /* BookingView.swift */,
+				3DF34891287B676700BC73A0 /* BookingViewModel.swift */,
 			);
 			path = BookingView;
 			sourceTree = "<group>";
@@ -292,6 +295,7 @@
 				3D58274E287467AB00C5F80A /* ImageView.swift in Sources */,
 				D186589328679A1300148A75 /* Network.swift in Sources */,
 				3D582751287498AB00C5F80A /* DetailItemView.swift in Sources */,
+				3DF34892287B676700BC73A0 /* BookingViewModel.swift in Sources */,
 				D18CC6632868ADA600E01A2A /* Error.swift in Sources */,
 				3DF34890287B63AC00BC73A0 /* GridView.swift in Sources */,
 				D18CC6692868BE4500E01A2A /* BusinessService.swift in Sources */,
