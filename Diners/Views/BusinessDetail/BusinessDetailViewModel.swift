@@ -41,7 +41,7 @@ final class BusinessDetailViewModel: ObservableObject {
     }
     
     var coordinateRegion: MKCoordinateRegion {
-        .init(center: coordinate, span: MKCoordinateSpan(latitudeDelta: 0.5, longitudeDelta: 0.5))
+        .init(center: coordinate, span: MKCoordinateSpan(latitudeDelta: 0.05, longitudeDelta: 0.05))
     }
     
     init(businesses: [Business], business: Business) {
