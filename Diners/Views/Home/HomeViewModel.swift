@@ -13,6 +13,7 @@ final class HomeViewModel: ObservableObject {
     @Published var businesses: [Business] = []
     @Published var selectedCategory: Price = .all
     @Published var searchQuery = ""
+    
     let priceCategories: [Price] = Price.allCases
     let columns = Array(repeating: GridItem(.adaptive(minimum: 180)), count: 2)
     
