@@ -13,7 +13,8 @@ protocol Networking: ObservableObject {
 }
 
 class Network: Networking {
-    private let apiKey = "ATPEh592ywOElt6rDUT-n2sQYaCe-R5amR8tRXTi6vsedHwf5cJAhSz12DqVgkO9Az_4kYeUnQKqiC2Daq9WE_yNLVxbDPtMq_KCuW7d3kKjqI1zg8dOIzTI-dCwYnYx"
+    // Insert your own API key here
+    private let apiKey = "####"
     
     func fetch<T: Decodable>(_ Type: T.Type,
                              endpoint: Endpoint) async throws -> T {
