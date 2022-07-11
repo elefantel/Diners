@@ -8,6 +8,7 @@
 import SwiftUI
 
 struct BusinessCardView: View {
+    
     let business: Business
     
     var body: some View {
@@ -31,6 +32,7 @@ struct BusinessCardView: View {
                    alignment: .topLeading)
             .padding()
         }
+        .contentShape(Rectangle())
         .cardView()
     }
 }

@@ -23,6 +23,7 @@ struct RowImage: View {
                 ProgressView()
             }
         )
+        .frame(width: size, height: size)
         .clipShape(RoundedRectangle(cornerRadius: size/2, style: .continuous))
         .overlay(
             RoundedRectangle(cornerRadius: size/2, style: .continuous)

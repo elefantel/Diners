@@ -8,7 +8,7 @@
 import SwiftUI
 
 extension Image {
-    func sizeToFit(_ contentMode: ContentMode = .fit,
+    func sizeToFit(_ contentMode: ContentMode = .fill,
                    width: CGFloat,
                    height: CGFloat) -> some View {
         self

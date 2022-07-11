@@ -13,67 +13,99 @@ struct BusinessDetailView: View {
     @ObservedObject var viewModel: BusinessDetailViewModel
     
     var body: some View {
-        VStack {
-            ImageView(urlString: viewModel.business.imageUrl,
-                      height: 300)
+        VStack(spacing: 0) {
+            ImageView(
+                urlString: viewModel.business.imageUrl,
+                height: 300)
             ScrollView {
-                ScrollViewReader { reader in
-                    VStack(alignment: .leading) {
-                        HStack {
-                            Text(viewModel.business.name)
-                                .font(.title2)
-                                .fontWeight(.semibold)
-                            Spacer(minLength: 0)
-                            ReviewsView(rating: viewModel.business.rating,
-                                        reviewCount: viewModel.business.reviewCount,
-                                        imageSize: 20)
-                        }
-                        .id(0)
-                        ForEach(viewModel.detailItems) { detailItem in
-                            DetailItemView(item: detailItem)
-                        }
-                        Map(coordinateRegion: .constant(viewModel.coordinateRegion),
-                            annotationItems: [viewModel.mapPin]) {
-                            MapMarker(coordinate: $0.coordinate)
-                        }
-                        .cornerRadius(10)
-                        .frame(height: 200)
-                    }
-                    .padding(.horizontal)
+                ScrollViewReader { verticalProxy in
+                    businessInfoView
                     Spacer()
-                    if !viewModel.otherBusinesses.isEmpty {
-                        VStack(alignment: .leading) {
-                            Text("Other businesses")
-                                .font(.headline)
-                            ScrollView(.horizontal) {
-                                HStack(spacing: 8) {
-                                    ForEach(viewModel.otherBusinesses) { business in
-                                        BusinessCardView(business: business)
-                                            .frame(width: 240)
-                                            .onTapGesture {
-                                                withAnimation { viewModel.business = business }
-                                            }
-                                    }
-                                }
-                            }
-                            .scrollIndicators(.hidden)
-                        }
-                        .padding()
-                        .onChange(of: viewModel.business) { _ in
-                            reader.scrollTo(0)
-                        }
+                    NavigationLink(value: Route.booking(viewModel.business)) {
+                        PrimaryButtonView(image: "calendar", text: "Make a booking")
+                            .padding(.horizontal)
                     }
+                    otherBusinessesView(
+                        viewModel.otherBusinesses,
+                        verticalProxy: verticalProxy)
                 }
             }
-            .scrollIndicators(.hidden)
         }
         .edgesIgnoringSafeArea(.top)
     }
 }
 
+private extension BusinessDetailView {
+    
+    var businessInfoView: some View {
+        VStack(alignment: .leading) {
+            HStack(alignment: .top) {
+                Text(viewModel.business.name)
+                    .font(.title2)
+                    .fontWeight(.semibold)
+                Spacer(minLength: 0)
+                ReviewsView(
+                    rating: viewModel.business.rating,
+                    reviewCount: viewModel.business.reviewCount,
+                    imageSize: 20)
+            }
+            .id(0)
+            ForEach(viewModel.detailItems) { detailItem in
+                DetailItemView(item: detailItem)
+            }
+            MapView(
+                items: [viewModel.mapPin],
+                region: .constant(viewModel.coordinateRegion))
+        }
+        .padding(.horizontal)
+        .padding(.top)
+    }
+    
+    @ViewBuilder
+    func otherBusinessesView(_ businesses: [Business],
+                             verticalProxy: ScrollViewProxy) -> some View {
+        if viewModel.otherBusinesses.count > 0 {
+            VStack(alignment: .leading) {
+                Text("Other restaurants")
+                    .font(.headline)
+                ScrollView(.horizontal) {
+                    ScrollViewReader { horizontalProxy in
+                        HStack(spacing: 8) {
+                            ForEach(viewModel.otherBusinesses.indices,
+                                    id: \.self) { index in
+                                let business = viewModel.otherBusinesses[index]
+                                BusinessCardView(business: business)
+                                    .id(index)
+                                    .frame(width: 240)
+                                    .onTapGesture {
+                                        withAnimation { viewModel.business = business }
+                                    }
+                            }
+                        }
+                        .onChange(of: viewModel.business) { _ in
+                            verticalProxy.scrollTo(0)
+                            horizontalProxy.scrollTo(0)
+                        }
+                    }
+                }
+                .scrollIndicators(.hidden)
+            }
+            .padding()
+        }
+    }
+}
+
 struct BusinessDetailView_Previews: PreviewProvider {
     static var previews: some View {
-        BusinessDetailView(viewModel: BusinessDetailViewModel(
+        BusinessDetailView(
+            viewModel: BusinessDetailViewModel(
+                businesses: MockData.businesses,
+                business: MockData.businesses[0]))
+        .previewDevice(PreviewDevice(rawValue: "iPad Pro (9.7-inch)"))
+        .previewDisplayName("iPad Pro (9.7-inch)")
+                
+        BusinessDetailView(
+            viewModel: BusinessDetailViewModel(
             businesses: MockData.businesses,
             business: MockData.businesses[0]))
         .previewDevice(PreviewDevice(rawValue: "iPad Pro (12.9-inch) (5th generation)"))

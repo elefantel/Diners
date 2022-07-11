@@ -26,5 +26,6 @@ struct ImageView: View {
                 ProgressView()
             }
         )
+        .frame(height: height)
     }
 }

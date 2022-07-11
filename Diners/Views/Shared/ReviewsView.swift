@@ -26,5 +26,6 @@ struct ReviewsView: View {
                 .font(.caption)
                 .fontWeight(.regular)
         }
+        .font(.caption)
     }
 }
